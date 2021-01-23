@@ -11,6 +11,13 @@
     a
         padding: 1em 3em
         transition: padding 0.655s $easeOutExpo
+        @media #{$small}
+            padding: 1em
+        h4
+            transform: scale(0)
+            transform-origin: top left
+            opacity: 0
+            transition: all 0.655s $easeOutExpo
 
 .header li
     flex-grow: 1
@@ -18,12 +25,27 @@
     //text-align: center
     color: #ffffff
     list-style: none
-    &:first-child
-        //flex-grow: 0.5
+    @media #{$small}
+        &:first-child
+            flex-grow: inherit
+            flex-basis: inherit
+            width: 100%
+    h4
+        margin: 0
+
 .header a
     padding: 3em
     display: block
     transition: background-color 1s $easeOutExpo, padding 0.655s $easeOutExpo
+    @media #{$small}
+        padding: 1em
+    h4
+        transform: scale(1)
+        margin: 0
+        opacity: 1
+        transform-origin: top left
+        transition: all 0.655s $easeOutExpo
+        text-transform: uppercase
 
 .header a.home
     background-color: $home
@@ -31,13 +53,19 @@
         background-color: darken($home, 20)
 .header a.cav
     background-color: $cav
+    @media #{$small}
+        display: none
     &.active
         background-color: darken($cav, 20)
 .header a.hda
     background-color: $hda
+    @media #{$small}
+        display: none
     &.active
         background-color: darken($hda, 20)
 .header a.theatre
     background-color: $theatre
+    @media #{$small}
+        display: none
     &.active
         background-color: darken($theatre, 20)

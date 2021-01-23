@@ -16,17 +16,6 @@ export class HeaderComponent implements OnInit {
   }
 
   move_header() {
-    let elementWithScroll = document.querySelector('.scroll-content').parentNode["id"]
-    let scroller = Scrollbar.get(document.getElementById(elementWithScroll))
-    scroller.addListener(function (status) {
-      let header = document.getElementById("header")
 
-      if (scroller.offset.y >= 200) {
-        header.classList.add('small_header')
-      } else {
-        header.classList.remove('small_header')
-
-      }
-    })
   }
 }

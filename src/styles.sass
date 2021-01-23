@@ -27,12 +27,16 @@ a
     font-size: 5em
     line-height: 1em
     margin-bottom: 0
-
+    @media #{$small}
+        font-size: 2.5em
 .opt
     font-weight: 300
     font-size: 1.5em
     padding: 1em 0
     display: block
+    @media #{$small}
+        padding: 0.5em 0
+        font-size: 0.9em
 .sub_title
     font-style: italic
     font-weight: 700
@@ -40,6 +44,8 @@ a
     line-height: 1.2em
     position: relative
     overflow: hidden
+    @media #{$small}
+        font-size: 1.5em
     &::after
         content: ""
         height: 1px
@@ -52,3 +58,28 @@ a
 .section
     min-height: 75vh
     width: 100%
+
+.aside
+    position: fixed
+    width: 25%
+    background-color: rgba(#000000, 0.3)
+    min-height: 100vh
+    left: 0
+    top: 0
+    bottom: 0
+    @media #{$small}
+        display: none
+#main
+    height: 100vh
+
+.main_content
+    width: 75%
+    margin: 0 0 0 25%
+    padding: 20vh 3em
+    box-sizing: border-box
+    min-height: 200vh
+    overflow: hidden
+    @media #{$small}
+        margin: 0
+        width: 100%
+        padding: 10vh 1em

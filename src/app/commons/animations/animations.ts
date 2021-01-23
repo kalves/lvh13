@@ -23,7 +23,32 @@ export function back_to_top(_Time) {
     let scroller = Scrollbar.get(document.getElementById(elementWithScroll))
     scroller.scrollTo(0, 0, _Time)
     // document.getElementById("back_to_top").style.display = 'none'
+
+    scroller.addListener(function (status) {
+
+        let header = document.getElementById("header")
+        if (scroller.offset.y >= 10) {
+            header.classList.add('small_header')
+        } else {
+            header.classList.remove('small_header')
+        }
+    })
+
 }
+
+export function fixed_element() {
+    let elementWithScroll = document.querySelector('.scroll-content').parentNode["id"]
+    let scroller = Scrollbar.get(document.getElementById(elementWithScroll))
+    // document.getElementById("back_to_top").style.display = 'none'
+    let aside = document.getElementById("aside")
+
+    scroller.addListener(function (status) {
+        if (aside) {
+            aside.style.top = scroller.offset.y + 'px'
+        }
+    })
+}
+
 export function routerTransition() {
     return trigger('routerAnimation', [
         transition('* => *', [
@@ -36,7 +61,7 @@ export function routerTransition() {
                         //transform: 'translateY(25vh)'
                     }),
                     animate(
-                        '1.5s 0.9s cubic-bezier(0.16, 1, 0.3, 1)',
+                        '0.655s 0.9s cubic-bezier(0.16, 1, 0.3, 1)',
                         style({
                             opacity: 1,
                             position: 'fixed',
@@ -52,12 +77,12 @@ export function routerTransition() {
                         position: 'fixed'
                     }),
                     animate(
-                        '1s 0s cubic-bezier(0.16, 1, 0.3, 1)',
+                        '0.655s 0s cubic-bezier(0.16, 1, 0.3, 1)',
                         style({
                             opacity: 0,
                             width: '100%',
                             position: 'fixed',
-                            transform: 'translateY(-50vh)'
+                            transform: 'translateY(-40vh)'
                         }),
                     ),
                 ], { optional: true })
