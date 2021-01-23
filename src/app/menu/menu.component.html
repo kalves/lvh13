@@ -1,0 +1,9 @@
+<div (click)="toggleSidebar()">menu</div>
+
+<aside id="sidebar" *ngIf="menu" class="sidebar_wrapper" [@popOverState]="stateNameSidebar">
+    <nav>
+        <li *ngFor="let item of menu.items" class="menu_item">
+            <a class="hidden_element" routerLink="{{item.slug}}" routerLinkActive="active">{{item.title}}</a>
+        </li>
+    </nav>
+</aside>

@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<!-- scene principale -->
+<aside class="aside"></aside>
+
+<main id="main">
+
+  <div [@routerAnimation]="prepareRoute(outlet)" class="main_content">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</main>

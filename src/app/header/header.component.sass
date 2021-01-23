@@ -1,0 +1,43 @@
+@import './../../styling/settings'
+.header
+    display: flex
+    flex-direction: row
+    width: 100%
+    position: fixed
+    z-index: 9
+    color: #ffffff
+
+.header.small_header
+    a
+        padding: 1em 3em
+        transition: padding 0.655s $easeOutExpo
+
+.header li
+    flex-grow: 1
+    flex-basis: 0
+    //text-align: center
+    color: #ffffff
+    list-style: none
+    &:first-child
+        //flex-grow: 0.5
+.header a
+    padding: 3em
+    display: block
+    transition: background-color 1s $easeOutExpo, padding 0.655s $easeOutExpo
+
+.header a.home
+    background-color: $home
+    &.active
+        background-color: darken($home, 20)
+.header a.cav
+    background-color: $cav
+    &.active
+        background-color: darken($cav, 20)
+.header a.hda
+    background-color: $hda
+    &.active
+        background-color: darken($hda, 20)
+.header a.theatre
+    background-color: $theatre
+    &.active
+        background-color: darken($theatre, 20)

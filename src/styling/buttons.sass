@@ -1,0 +1,110 @@
+@import 'ease.sass'
+@import 'fonts.scss'
+
+.button_design
+    transition: all .8s $easeOutExpo
+    padding: 1.5em 3em
+    border: 0
+    text-transform: uppercase
+    background: rgba(#000000, 0.7)
+    font: 11px $reg
+    letter-spacing: 0.2rem
+    outline: none !important
+    color: transparent
+    position: relative
+    overflow: hidden
+    &:before
+        transition: all .8s $easeOutExpo
+        content: attr(data-text)
+        color: rgba(#ffffff, 0.7)
+        width: 100%
+        position: absolute
+        height: 100%
+        left: 0
+
+    &:after
+        transition: all .8s $easeOutExpo
+        background: transparent
+        width: 100%
+        margin: auto
+        height: 100%
+        font-size: 16px
+        color: transparent
+        padding: 0.8em 0em
+        position: absolute
+        top: 0
+        font-family: "arial"
+
+.button_design.white
+    background: transparent
+    &::before, &::after
+        color: #000000
+    &:hover
+        background: transparent
+        &::before, &::after
+            color: #000000
+
+.button_design:hover
+    cursor: pointer
+    background: rgba(black, 0.85)
+    &:before
+        transition: all .8s $easeOutExpo
+        color: transparent
+
+    &:after
+        transition: all .8s $easeOutExpo
+        width: 100%
+        height: 100%
+        color: white
+
+.button_right
+    &:before
+        left: 0%
+
+    &:after
+        left: -100%
+        content: "→"
+
+    &:hover
+        &:after
+            left: 0
+
+        &:before
+            left: 100%
+
+.button_left
+    &:after
+        left: 100%
+        content: "←"
+
+    &:hover
+        &::after
+            left: 0
+
+        &:before
+            left: -100%
+
+.button_bottom
+    &:before
+        top: 16px
+
+    &:after
+        top: 100%
+        left: 0
+        content: "↓"
+
+    &:hover
+        &:after
+            top: 0
+
+        &:before
+            top: -100%
+
+.button_top
+    &:after
+        left: 0
+        content: "↑"
+
+.button_back_in_purchase_process
+    position: relative
+    z-index: 9999999999
