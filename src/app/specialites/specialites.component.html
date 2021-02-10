@@ -1,0 +1,16 @@
+<section class="section_specialites">
+    <h1 class="big_title">Spécialités</h1>
+    <div class="list_specialites">
+        <div *ngFor="let data of leftSpecialites">
+            <div class="specialite_section">
+                <h1 class="specialites_title"><span>{{ data.Acronyme }}<br>
+                        <hr></span>
+                    <a routerLink="/specialites/{{ data.id }}">{{ data.Nom }}</a></h1>
+                <br>
+                <a routerLink="specialites">
+                    <button class="button_design button_right" data-text="en savoir plus">en savoir plus</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_profs_intervenants",
+  "info": {
+    "name": "Intervenants",
+    "icon": "user-tie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Discipline": {
+      "type": "text"
+    }
+  }
+}

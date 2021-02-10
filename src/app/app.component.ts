@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
         setTimeout(function () {
           back_to_top(0)
-        }, 1000)
+        }, 325)
 
       }
     });

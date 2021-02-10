@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_detail_details",
+  "info": {
+    "name": "Detail",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Programmes": {
+      "type": "richtext"
+    },
+    "Metiers": {
+      "type": "richtext"
+    },
+    "Formations": {
+      "type": "richtext"
+    },
+    "Temoignages": {
+      "type": "richtext"
+    }
+  }
+}

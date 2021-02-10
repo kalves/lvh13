@@ -4,25 +4,56 @@
     <li>
         <a routerLink="/" class="home">
             <h4>Lycée Victor Hugo</h4>
-            <span>LVH13</span>
+        </a>
+    </li>
+    <li style="flex-grow: 1.8;">
+        <a routerlink="" style="opacity: 0.2;">Recherche</a>
+    </li>
+    <li>
+        <a routerLink="specialites" class="specialites" routerLinkActive="active">
+            <h4>Spécialités</h4>
         </a>
     </li>
     <li>
-        <a routerLink="cav" routerLinkActive="active" class="cav">
-            <h4>Cinéma Audiovisuel</h4>
-            <span>CAV</span>
+        <a routerLink="options" class="options" routerLinkActive="active">
+            <h4>Options</h4>
         </a>
     </li>
     <li>
-        <a routerLink="hda" routerLinkActive="active" class="hda">
-            <h4>Histoire des arts</h4>
-            <span>HDA</span>
+        <a routerLink="informations" class="informations" routerLinkActive="active">
+            <h4>Infos</h4>
         </a>
     </li>
-    <li>
-        <a routerLink="theatre" routerLinkActive="active" class="theatre">
-            <h4>Arts du spectable</h4>
-            <span>Théatre</span>
-        </a>
+
+    <li (click)="toggleSidebar()">
+        <div id="btn_menu">
+            <div class="bt-menu-trigger">
+                <span></span>
+            </div>
+        </div>
     </li>
 </header>
+
+
+<aside id="sidebar" class="sidebar_wrapper" [@popOverState]="stateNameSidebar">
+    <nav>
+        <li>
+            <a routerLink="cav" routerLinkActive="active" class="cav" (click)="toggleSidebar()">
+                <h4>Cinéma Audiovisuel</h4>
+                <span>CAV</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="hda" routerLinkActive="active" class="hda" (click)="toggleSidebar()">
+                <h4>Histoire des arts</h4>
+                <span>HDA</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="theatre" routerLinkActive="active" class="theatre" (click)="toggleSidebar()">
+                <h4>Arts du spectable</h4>
+                <span>Théatre</span>
+            </a>
+        </li>
+    </nav>
+</aside>

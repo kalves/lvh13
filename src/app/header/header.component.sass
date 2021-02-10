@@ -1,11 +1,12 @@
 @import './../../styling/settings'
+
 .header
     display: flex
     flex-direction: row
     width: 100%
     position: fixed
     z-index: 9
-    color: #ffffff
+    //background-color: #ffffff
 
 .header.small_header
     a
@@ -22,21 +23,45 @@
 .header li
     flex-grow: 1
     flex-basis: 0
-    //text-align: center
-    color: #ffffff
+    color: #000000
     list-style: none
+    border-bottom: 1px solid rgba(#000000, 0.2)
+    border-right: 1px solid rgba(#000000, 0.2)
+    &:last-child
+        display: none
     @media #{$small}
+        display: none
+        &:last-child
+            display: flex
+
         &:first-child
             flex-grow: inherit
             flex-basis: inherit
             width: 100%
-    h4
-        margin: 0
+            display: inline-block
+.header a.active
+    position: relative
+    &:after
+        content: ""
+        height: 5px
+        width: 100%
+        top: 0
+        left: 0
+        position: absolute
+
+.header a.specialites
+    &::after
+        background: $specialites
+
+.header a.options
+    &::after
+        background: $options
 
 .header a
     padding: 3em
     display: block
     transition: background-color 1s $easeOutExpo, padding 0.655s $easeOutExpo
+
     @media #{$small}
         padding: 1em
     h4
@@ -45,27 +70,108 @@
         opacity: 1
         transform-origin: top left
         transition: all 0.655s $easeOutExpo
-        text-transform: uppercase
+        //text-transform: uppercase
 
-.header a.home
+/* menu */
+/** bouton animation **/
+
+#btn_menu
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 1em
+    box-sizing: border-box
     background-color: $home
-    &.active
-        background-color: darken($home, 20)
-.header a.cav
-    background-color: $cav
-    @media #{$small}
-        display: none
-    &.active
-        background-color: darken($cav, 20)
-.header a.hda
-    background-color: $hda
-    @media #{$small}
-        display: none
-    &.active
-        background-color: darken($hda, 20)
-.header a.theatre
-    background-color: $theatre
-    @media #{$small}
-        display: none
-    &.active
-        background-color: darken($theatre, 20)
+    cursor: pointer
+
+.bt-menu-trigger
+    font-size: 2em
+    width: 40px
+    margin: auto
+    //height: 3em
+    position: relative
+    @media #{$medium_only, $small}
+        display: inline-block
+    span
+        position: absolute
+        top: 50%
+        left: 0
+        display: block
+        width: 100%
+        height: 2px
+        background-color: #fff
+        -webkit-touch-callout: none
+        -webkit-user-select: none
+        -khtml-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+        -webkit-transition: background-color 0.3s
+        transition: background-color 0.3s
+
+    & span:after, & span:before
+        position: absolute
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: #ffffff
+        color: #ffffff
+        content: ''
+        //opacity: 0.5
+        -webkit-transition: -webkit-transform 0.3s
+        transition: transform 0.3s, opacity 0.3s
+
+    & span:before
+        -webkit-transform: translateY(-0.3em)
+        transform: translateY(-0.3em)
+
+    & span:after
+        -webkit-transform: translateY(0.3em)
+        transform: translateY(0.3em)
+
+    &.bt-menu-open span:before, &.bt-menu-open:hover span:before
+        //-webkit-transform: translateY(-0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(0em) translateX(0em) rotate(0deg) scaleX(1)
+        mix-blend-mode: normal
+
+    &.bt-menu-open span:after, &.bt-menu-open:hover span:after
+        //-webkit-transform: translateY(0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(0em) translateX(0em) rotate(0deg) scaleX(1)
+        mix-blend-mode: normal
+
+    &:hover span:before
+        //opacity: 1
+        //-webkit-transform: translateY(-0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(-0.3em) translateX(-0.5em) rotate(0deg) scaleX(1)
+
+    &:hover span:after
+        //opacity: 1
+        //-webkit-transform: translateY(0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(0.3em) translateX(0.5em) rotate(0deg) scaleX(1)
+
+/** sidebar **/
+
+.sidebar_wrapper
+    height: calc(100vh - 72px)
+    width: 100vw
+    position: fixed
+    left: 100vw
+    top: 72px
+    z-index: 5
+    transition: 1s $easeOutExpo
+    nav
+        height: 100vh
+        display: flex
+        flex-direction: column
+    li
+        list-style: none
+        height: 100%
+        a
+            box-sizing: border-box
+            padding: 3em
+            display: block
+            height: 100%
+            color: #ffffff
+    &.menu_opened
+        left: 0
+        transition: 1s $easeOutExpo

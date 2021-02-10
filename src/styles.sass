@@ -1,32 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'styling/settings.sass'
 
+@include font('sofia', '/assets/fonts/sofi_pro/SofiaPro')
+@include font('sofia_light', '/assets/fonts/sofi_pro/SofiaPro-Light')
+@include font('sofia_bold', '/assets/fonts/sofi_pro/SofiaPro-Bold')
+@include font('sofia_black', '/assets/fonts/sofi_pro/SofiaPro-Black')
+
 body
-    font-family: 'Lato', sans-serif
+    font-family: $ligth
     margin: 0
     padding: 0
-    background-color: lighten($home, 30 )
-    transition: background-color 1s $easeOutExpo
+    background: #ffffff
+    //background-color: lighten($home, 30 )
+    transition: background 2s $easeOutExpo
+    .header
+        background-color: #ffffff
+        transition: background-color 1s $easeOutExpo
 
-body[data-name="cav"]
-    background-color: $cav
-    transition: background-color 1s $easeOutExpo
+body[data-name="options"]
+    background: $options
+    transition: background 1s $easeOutExpo
+    .header
+        background-color: #ffffff
+        transition: background-color 2s $easeOutExpo
 
-body[data-name="hda"]
-    background-color: $hda
-    transition: background-color 1s $easeOutExpo
+body[data-name="specialites"]
+    background: $specialites
+    transition: background 2s $easeOutExpo
+    .header
+        background-color: #ffffff
+        transition: background-color 1s $easeOutExpo
 
+body[data-name="theatre"]
+    background-color: $theatre
+    transition: background-color 1s $easeOutExpo
+    .header
+        background-color: $theatre
+        transition: background-color 1s $easeOutExpo
+
+hr
+    border: none
+    border-bottom: 1px solid #000000
 a
     color: inherit
     text-decoration: none
     font-weight: 900
+    &:hover
+        text-decoration: underline
 
 .big_title
-    font-style: italic
+    //font-style: italic
     font-weight: 700
-    font-size: 5em
+    font: 5em $bold
     line-height: 1em
     margin-bottom: 0
+    span
+        font-style: normal
+        font-weight: 900
+        font: 0.5em $reg
     @media #{$small}
         font-size: 2.5em
 .opt
@@ -38,7 +69,7 @@ a
         padding: 0.5em 0
         font-size: 0.9em
 .sub_title
-    font-style: italic
+    //font-style: italic
     font-weight: 700
     font-size: 3em
     line-height: 1.2em
@@ -56,8 +87,13 @@ a
         margin-left: 25px
 
 .section
-    min-height: 75vh
+    min-height: 100vh
     width: 100%
+
+.section_wrapper
+    width: 70%
+    margin: auto
+    padding-top: 25vh
 
 .aside
     position: fixed
@@ -73,13 +109,13 @@ a
     height: 100vh
 
 .main_content
-    width: 75%
-    margin: 0 0 0 25%
-    padding: 20vh 3em
+    width: 100%
+    //margin: 0 0 0 25%
+    //padding: 20vh 3em
     box-sizing: border-box
     min-height: 200vh
     overflow: hidden
     @media #{$small}
         margin: 0
         width: 100%
-        padding: 10vh 1em
+        //padding: 20vh 1em

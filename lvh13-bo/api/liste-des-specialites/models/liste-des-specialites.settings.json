@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "liste_des_specialites",
+  "info": {
+    "name": "Liste des spécialites"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "specialites": {
+      "collection": "specialites"
+    }
+  }
+}

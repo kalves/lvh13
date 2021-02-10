@@ -2,8 +2,26 @@
 
 <aside id="sidebar" *ngIf="menu" class="sidebar_wrapper" [@popOverState]="stateNameSidebar">
     <nav>
-        <li *ngFor="let item of menu.items" class="menu_item">
+        <!--         <li *ngFor="let item of menu.items" class="menu_item">
             <a class="hidden_element" routerLink="{{item.slug}}" routerLinkActive="active">{{item.title}}</a>
+        </li> -->
+        <li>
+            <a routerLink="cav" routerLinkActive="active" class="cav">
+                <h4>Cinéma Audiovisuel</h4>
+                <span>CAV</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="hda" routerLinkActive="active" class="hda">
+                <h4>Histoire des arts</h4>
+                <span>HDA</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="theatre" routerLinkActive="active" class="theatre">
+                <h4>Arts du spectable</h4>
+                <span>Théatre</span>
+            </a>
         </li>
     </nav>
 </aside>

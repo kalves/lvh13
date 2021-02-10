@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "informations",
+  "info": {
+    "name": "Informations"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Non": {
+      "type": "string"
+    }
+  }
+}

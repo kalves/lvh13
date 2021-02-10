@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/liste-des-specialites",
+      "handler": "liste-des-specialites.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/liste-des-specialites",
+      "handler": "liste-des-specialites.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/liste-des-specialites",
+      "handler": "liste-des-specialites.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "specialites",
+  "info": {
+    "name": "Spécialités",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Acronyme": {
+      "type": "string"
+    },
+    "Presentation": {
+      "type": "richtext"
+    },
+    "Detail": {
+      "type": "component",
+      "repeatable": false,
+      "component": "detail.detail"
+    }
+  }
+}

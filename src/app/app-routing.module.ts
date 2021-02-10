@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-import { CavComponent } from './cav/cav.component';
-import { HdaComponent } from './hda/hda.component';
-import { TheatreComponent } from './theatre/theatre.component';
+import { SpecialitesComponent } from './specialites/specialites.component';
+import { OptionsComponent } from './options/options.component';
+import { InformationsComponent } from './informations/informations.component';
+import { SingleOptionsComponent } from './single-options/single-options.component';
+import { SingleSpecialitesComponent } from './single-specialites/single-specialites.component';
 
 const routes: Routes = [
   {
@@ -12,16 +14,24 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'cav',
-    component: CavComponent
+    path: 'specialites',
+    component: SpecialitesComponent
   },
   {
-    path: 'hda',
-    component: HdaComponent
+    path: 'specialites/:id',
+    component: SingleSpecialitesComponent
   },
   {
-    path: 'theatre',
-    component: TheatreComponent
+    path: 'options',
+    component: OptionsComponent
+  },
+  {
+    path: 'options/:id',
+    component: SingleOptionsComponent
+  },
+  {
+    path: 'informations',
+    component: InformationsComponent
   },
   {
     path: '**',

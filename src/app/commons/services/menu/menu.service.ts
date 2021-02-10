@@ -38,7 +38,7 @@ export class MenuService {
     }
 
     loadMenu(): Observable<Array<Menu[]>> {
-        let url = environment.apiBaseUrl + "wp-json/menus/v1/menus/main_menu";
+        let url = environment.apiUrl + "wp-json/menus/v1/menus/main_menu";
         return this._http.get<Array<Menu[]>>(url);
     }
 

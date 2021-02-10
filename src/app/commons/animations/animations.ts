@@ -61,7 +61,7 @@ export function routerTransition() {
                         //transform: 'translateY(25vh)'
                     }),
                     animate(
-                        '0.655s 0.9s cubic-bezier(0.16, 1, 0.3, 1)',
+                        '0.55s 0.355s cubic-bezier(0.16, 1, 0.3, 1)',
                         style({
                             opacity: 1,
                             position: 'fixed',
@@ -77,12 +77,12 @@ export function routerTransition() {
                         position: 'fixed'
                     }),
                     animate(
-                        '0.655s 0s cubic-bezier(0.16, 1, 0.3, 1)',
+                        '0.55s 0s cubic-bezier(0.16, 1, 0.3, 1)',
                         style({
                             opacity: 0,
                             width: '100%',
                             position: 'fixed',
-                            transform: 'translateY(-40vh)'
+                            //transform: 'translateY(-40vh)'
                         }),
                     ),
                 ], { optional: true })
