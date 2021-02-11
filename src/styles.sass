@@ -6,6 +6,8 @@
 @include font('sofia_bold', '/assets/fonts/sofi_pro/SofiaPro-Bold')
 @include font('sofia_black', '/assets/fonts/sofi_pro/SofiaPro-Black')
 
+@include font('icons', '/assets/fonts/icons/font/icons')
+
 body
     font-family: $ligth
     margin: 0
@@ -24,6 +26,10 @@ body[data-name="options"]
         background-color: #ffffff
         transition: background-color 2s $easeOutExpo
 
+body[data-name="recherche"]
+    background: #222222
+    transition: background 2s $easeOutExpo
+
 body[data-name="specialites"]
     background: $specialites
     transition: background 2s $easeOutExpo
@@ -41,6 +47,9 @@ body[data-name="theatre"]
 hr
     border: none
     border-bottom: 1px solid #000000
+    &.white_hr
+        border-bottom: 1px solid rgba(#ffffff, 0.2 )
+
 a
     color: inherit
     text-decoration: none
@@ -48,18 +57,6 @@ a
     &:hover
         text-decoration: underline
 
-.big_title
-    //font-style: italic
-    font-weight: 700
-    font: 5em $bold
-    line-height: 1em
-    margin-bottom: 0
-    span
-        font-style: normal
-        font-weight: 900
-        font: 0.5em $reg
-    @media #{$small}
-        font-size: 2.5em
 .opt
     font-weight: 300
     font-size: 1.5em
@@ -68,6 +65,7 @@ a
     @media #{$small}
         padding: 0.5em 0
         font-size: 0.9em
+
 .sub_title
     //font-style: italic
     font-weight: 700
@@ -93,7 +91,7 @@ a
 .section_wrapper
     width: 70%
     margin: auto
-    padding-top: 25vh
+    padding-top: 30vh
 
 .aside
     position: fixed
@@ -119,3 +117,91 @@ a
         margin: 0
         width: 100%
         //padding: 20vh 1em
+
+/** -------------------------------------------------------------------------------------------- **/
+/** section options & specialites **/
+
+.section_container
+    padding-top: 30vh
+    width: 70%
+    margin: auto
+    @media #{$small,$medium_only}
+        padding-top: 20vh
+        width: 90%
+
+.big_title
+    font: 5em $black
+    margin: 0
+    padding-bottom: 20vh
+    @media #{$small}
+        font-size: 2.5em
+
+.list_items
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    grid-gap: 6em
+    @media #{$small,$medium_only}
+        grid-template-columns: repeat(1, minmax(0, 1fr))
+        grid-gap: 2em
+
+.item_section
+    margin-bottom: 20%
+    @media #{$small,$medium_only}
+        margin-bottom: 0%
+.item_title
+    font: 2.5em $reg
+    margin: 0
+    font-weight: normal
+    letter-spacing: -1px
+    span
+        font: 0.4em $ligth
+        opacity: 0.5
+    @media #{$small}
+        font-size: 1.5em
+
+.button_item
+    @media #{$small,$medium_only}
+        display: none
+
+/** single options --- single specialites **/
+
+.single_item_wrapper
+    padding-top: 40vh
+    width: 80%
+    margin: auto
+    @media #{$small, $medium_only}
+        width: 90%
+        padding-top: 20vh
+
+.single_item_header
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 4em
+    @media #{$small, $medium_only}
+        grid-template-columns: repeat(1, minmax(0, 1fr))
+        gap: 2em
+
+.single_title
+    font: 4em $black
+    line-height: 0.9em
+    letter-spacing: -1px
+    margin: 0
+    @media #{$small}
+        font-size: 2.5em
+
+.description
+    font-size: 1.5em
+    margin: 0
+    @media #{$small, $medium_only}
+        font-size: 1em
+
+.single_item_topics
+    padding-top: 20vh
+    width: 70%
+    float: right
+    padding-bottom: 60vh
+    section
+        margin: 2em auto
+    @media #{$small, $medium_only}
+        width: 100%
+        padding-top: 10vh

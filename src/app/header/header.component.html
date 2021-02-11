@@ -1,14 +1,12 @@
 <!-- <app-menu></app-menu>
  -->
 <header class="header" id="header">
-    <li>
+    <li class="home">
         <a routerLink="/" class="home">
             <h4>Lycée Victor Hugo</h4>
         </a>
     </li>
-    <li style="flex-grow: 1.8;">
-        <a routerlink="" style="opacity: 0.2;">Recherche</a>
-    </li>
+
     <li>
         <a routerLink="specialites" class="specialites" routerLinkActive="active">
             <h4>Spécialités</h4>
@@ -23,6 +21,9 @@
         <a routerLink="informations" class="informations" routerLinkActive="active">
             <h4>Infos</h4>
         </a>
+    </li>
+    <li class="search">
+        <a routerLink="recherche"></a>
     </li>
 
     <li (click)="toggleSidebar()">

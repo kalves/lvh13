@@ -17,6 +17,7 @@ import { OptionsComponent } from './options/options.component';
 import { InformationsComponent } from './informations/informations.component';
 import { SingleSpecialitesComponent } from './single-specialites/single-specialites.component';
 import { SingleOptionsComponent } from './single-options/single-options.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SingleOptionsComponent } from './single-options/single-options.componen
     OptionsComponent,
     InformationsComponent,
     SingleSpecialitesComponent,
-    SingleOptionsComponent
+    SingleOptionsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

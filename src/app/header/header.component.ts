@@ -23,6 +23,10 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  SearchInput(event) {
+    console.log("sdfsdfsdf")
+  }
+
   /* aniamtion sidebar */
 
   get stateNameSidebar() {

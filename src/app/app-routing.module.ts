@@ -7,6 +7,7 @@ import { OptionsComponent } from './options/options.component';
 import { InformationsComponent } from './informations/informations.component';
 import { SingleOptionsComponent } from './single-options/single-options.component';
 import { SingleSpecialitesComponent } from './single-specialites/single-specialites.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'informations',
     component: InformationsComponent
+  },
+  {
+    path: 'recherche',
+    component: SearchComponent
   },
   {
     path: '**',
