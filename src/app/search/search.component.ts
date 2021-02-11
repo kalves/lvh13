@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  value
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getValue(e) {
+    let x = (<HTMLInputElement>document.getElementById("search")).value
+    console.log("la valeur du champs de recherche : " + x)
   }
 
 }

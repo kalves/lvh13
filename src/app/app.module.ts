@@ -18,6 +18,7 @@ import { InformationsComponent } from './informations/informations.component';
 import { SingleSpecialitesComponent } from './single-specialites/single-specialites.component';
 import { SingleOptionsComponent } from './single-options/single-options.component';
 import { SearchComponent } from './search/search.component';
+import { SearchResultsComponent } from './search/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchComponent } from './search/search.component';
     InformationsComponent,
     SingleSpecialitesComponent,
     SingleOptionsComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

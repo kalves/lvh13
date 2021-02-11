@@ -3,17 +3,21 @@
 .big_title.search
     color: #ffffff
 
-.search_term
-    font-family: $bold
-    font-style: italic
-    font-size: inherit
-    //color: #db0000
-    font-family: $ligth
-    &::after, &::before
-        //content: '"'
-
-.white
+.search_input
+    border: none
+    border-bottom: 1px solid rgba(#ffffff,0.5 )
+    padding: 10px 0
+    font: 2em $ligth
     color: #ffffff
+    outline: none
+    background: none
+    width: 100%
+    &:focus
+        border-bottom: 3px solid rgba(#ffffff,0.75 )
 
-.white_hr_fat
-    border-bottom: 3px solid rgba(#ffffff, 0.75)
+.label_search
+    font: 1.5em $reg
+    //font-style: italic
+    padding: 1em 0
+    color: rgba(#ffffff, 0.5)
+    display: block
