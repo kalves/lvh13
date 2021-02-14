@@ -28,7 +28,7 @@ export class SingleSpecialitesComponent implements OnInit {
       .watchQuery({
         query: SPECIALITE_QUERY,
         variables: {
-          id: this.route.snapshot.paramMap.get("id")
+          slug: this.route.snapshot.paramMap.get("slug")
         }
       })
       .valueChanges.subscribe(result => {

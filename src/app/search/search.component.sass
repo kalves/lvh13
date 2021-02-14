@@ -4,19 +4,28 @@
     color: #ffffff
 
 .search_input
+    margin-top: 10vh
     border: none
-    border-bottom: 1px solid rgba(#ffffff,0.5 )
+    border-bottom: 1px solid rgba(#ffffff,0.2 )
     padding: 10px 0
-    font: 2em $ligth
+    font: 3em $ligth
     color: #ffffff
     outline: none
     background: none
     width: 100%
+    transition: border-bottom 2s $easeOutExpo
     &:focus
-        border-bottom: 3px solid rgba(#ffffff,0.75 )
+        border-bottom: 1px solid rgba(#ffffff, 1 )
+        transition: border-bottom 2s $easeOutExpo
+
+.search_input::placeholder
+    opacity: 0.1
+
+.search_input:focus::placeholder
+    opacity: 0
 
 .label_search
-    font: 1.5em $reg
+    font: 1em $ligth
     //font-style: italic
     padding: 1em 0
     color: rgba(#ffffff, 0.5)

@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/specialites/:id",
+      "path": "/specialites/:slug",
       "handler": "specialites.findOne",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/specialites/:id",
+      "path": "/specialites/:slug",
       "handler": "specialites.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/specialites/:id",
+      "path": "/specialites/:slug",
       "handler": "specialites.delete",
       "config": {
         "policies": []

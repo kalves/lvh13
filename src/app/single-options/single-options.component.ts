@@ -13,6 +13,7 @@ import { variable } from '@angular/compiler/src/output/output_ast';
   templateUrl: './single-options.component.html',
   styleUrls: ['./single-options.component.sass']
 })
+
 export class SingleOptionsComponent implements OnInit {
   data: any = {};
   loading = true;
@@ -28,14 +29,15 @@ export class SingleOptionsComponent implements OnInit {
       .watchQuery({
         query: OPTION_QUERY,
         variables: {
-          id: this.route.snapshot.paramMap.get("id")
+          slug: this.route.snapshot.paramMap.get("slug")
         }
       })
       .valueChanges.subscribe(result => {
-        //console.log("result: ", result)
         this.data = result.data;
         this.loading = result.loading;
         this.errors = result.errors;
+        console.log(this.data)
+
       });
   }
 

@@ -1,11 +1,14 @@
 import gql from "graphql-tag";
 
 const OPTION_QUERY = gql`
-  query Option($id : ID!){
-    option(id: $id) {
+  query Options($slug: String!){
+    options(where : {slug: $slug}) {
         id
-        Nom
-    }
+        title
+        Acronyme
+        slug
+        link
+    }    
   }
 `;
 

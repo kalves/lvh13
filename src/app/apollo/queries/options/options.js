@@ -4,8 +4,10 @@ const OPTIONS_QUERY = gql`
   query Options{
     options {
         id
-        Nom
+        title
         Acronyme
+        slug
+        link
     }
   }
 `;

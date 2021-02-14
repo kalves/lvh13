@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/options/:id",
+      "path": "/options/:slug",
       "handler": "options.findOne",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/options/:id",
+      "path": "/options/:slug",
       "handler": "options.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/options/:id",
+      "path": "/options/:slug",
       "handler": "options.delete",
       "config": {
         "policies": []

@@ -24,6 +24,16 @@
       "type": "component",
       "repeatable": false,
       "component": "detail.detail"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "link": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }

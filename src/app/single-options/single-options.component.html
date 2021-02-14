@@ -1,7 +1,7 @@
-<section class="single_option_wrapper single_item_wrapper" *ngIf="data.option">
-    <div class="single_option_header single_item_header">
+<section class="single_option_wrapper single_item_wrapper" *ngIf="data.options">
+    <div class="single_option_header single_item_header" *ngFor="let data of data.options">
         <div class="single_option_title single_item_title">
-            <h1 class="single_title">{{data.option.Nom}}</h1>
+            <h1 class="single_title">{{data.title}}</h1>
             <br>
             <button class="button_design button_right" data-text="Télécharger le PDF">Télécharger le PDF</button>
             <br><br>

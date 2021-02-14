@@ -19,7 +19,7 @@ const routes: Routes = [
     component: SpecialitesComponent
   },
   {
-    path: 'specialites/:id',
+    path: 'specialites/:slug',
     component: SingleSpecialitesComponent
   },
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
     component: OptionsComponent
   },
   {
-    path: 'options/:id',
+    path: 'options/:slug',
     component: SingleOptionsComponent
   },
   {

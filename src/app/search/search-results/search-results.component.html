@@ -1,3 +1,10 @@
 <section class="results">
-    <span class="white">¯\(°_o)/¯</span>
+    <h2>Résultats pour : <span class="terme">{{search}}</span></h2>
+    <br>
+    <div class="results_section" *ngIf="data.search">
+        <!-- <h1 class="white nothing">¯\(°_o)/¯</h1> -->
+
+        <h3>{{data.search.Nom}}</h3>
+    </div>
+    <hr class="white_hr">
 </section>

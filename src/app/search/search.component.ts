@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass']
 })
+
+
 export class SearchComponent implements OnInit {
 
-  value
+  loadComponent = false;
 
   constructor() { }
+
+  search: string
 
   ngOnInit(): void {
   }
 
   getValue(e) {
     let x = (<HTMLInputElement>document.getElementById("search")).value
-    console.log("la valeur du champs de recherche : " + x)
+    this.loadComponent = true;
+
+    this.search = x
   }
 
 }
