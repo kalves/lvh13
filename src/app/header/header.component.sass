@@ -26,6 +26,10 @@
     box-sizing: border-box
     a
         padding-left: 2em
+        h4::after
+            content: "Marseille"
+            display: block
+            opacity: 0.5
 
 .header .search a
     //flex-grow: 1.8
@@ -69,6 +73,10 @@
 .header a:hover
     &::after
         background-color: rgba(#000000, 0.3 )
+
+.header a.active
+    &::after
+        background-color: rgba(#000000, 0.7 )
 
 .header a.specialites.active
     &::after

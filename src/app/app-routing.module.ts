@@ -12,31 +12,39 @@ import { SearchComponent } from './search/search.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    data: { animation: 0 }
   },
   {
     path: 'specialites',
-    component: SpecialitesComponent
+    component: SpecialitesComponent,
+    data: { animation: 1 }
   },
   {
     path: 'specialites/:slug',
-    component: SingleSpecialitesComponent
+    component: SingleSpecialitesComponent,
+    data: { animation: 2 }
   },
   {
     path: 'options',
-    component: OptionsComponent
+    component: OptionsComponent,
+    data: { animation: 3 }
   },
   {
     path: 'options/:slug',
-    component: SingleOptionsComponent
+    component: SingleOptionsComponent,
+    data: { animation: 4 }
+
   },
   {
     path: 'informations',
-    component: InformationsComponent
+    component: InformationsComponent,
+    data: { animation: 5 }
   },
   {
     path: 'recherche',
-    component: SearchComponent
+    component: SearchComponent,
+    data: { animation: 4 }
   },
   {
     path: '**',

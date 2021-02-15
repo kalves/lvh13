@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd, NavigationStart, ActivatedRoute } from '@angular/router';
-import { routerTransition, popOverState, init_scroll, back_to_top } from './commons/animations/animations';
+import { slider, popOverState, init_scroll, back_to_top } from './commons/animations/animations';
 import { Title } from '@angular/platform-browser';
 import { filter } from 'rxjs/operators';
 
@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
   animations: [
-    routerTransition()
+    slider
   ]
 })
 export class AppComponent implements OnInit {
@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
   }
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData;
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
 }

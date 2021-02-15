@@ -2,7 +2,7 @@
  -->
 <header class="header" id="header">
     <li class="home">
-        <a routerLink="/" class="home">
+        <a routerLink="/" class="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <h4>Lycée Victor Hugo</h4>
         </a>
     </li>
@@ -23,7 +23,7 @@
         </a>
     </li>
     <li class="search">
-        <a routerLink="recherche"></a>
+        <a routerLink="recherche" routerLinkActive="active"></a>
     </li>
 
     <li (click)="toggleSidebar()">

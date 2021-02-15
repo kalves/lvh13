@@ -20,29 +20,32 @@ body
         transition: background-color 1s $easeOutExpo
 
 body[data-name="options"]
-    background: $options
-    transition: background 1s $easeOutExpo
+    //background: $options
+    //transition: background 1s $easeOutExpo
     .header
         background-color: #ffffff
         transition: background-color 2s $easeOutExpo
 
-body[data-name="recherche"]
-    background: #111111
-    transition: background 2s $easeOutExpo
+    .background.options
+        opacity: 1
+        visibility: visible
+        transition: opacity 2.8s $easeOutExpo
 
 body[data-name="specialites"]
-    background: $specialites
-    transition: background 2s $easeOutExpo
+    //background: $specialites
+    //transition: background 2s $easeOutExpo
     .header
         background-color: #ffffff
         transition: background-color 1s $easeOutExpo
 
-body[data-name="theatre"]
-    background-color: $theatre
-    transition: background-color 1s $easeOutExpo
-    .header
-        background-color: $theatre
-        transition: background-color 1s $easeOutExpo
+    .background.specialites
+        opacity: 1
+        visibility: visible
+        transition: opacity 2.8s $easeOutExpo
+
+body[data-name="recherche"]
+    background: #111111
+    transition: background 2s $easeOutExpo
 
 hr
     border: none
@@ -142,6 +145,7 @@ h1, h2, h3, h4, h5
     font: 5em $black
     margin: 0
     padding-bottom: 20vh
+    line-height: 0.9em
     @media #{$small}
         font-size: 2.5em
 
@@ -175,16 +179,24 @@ h1, h2, h3, h4, h5
 /** single options --- single specialites **/
 
 .single_item_wrapper
-    padding-top: 40vh
+    padding-top: 20vh
     width: 80%
     margin: auto
     @media #{$small, $medium_only}
         width: 90%
-        padding-top: 20vh
+        padding-top: 5vh
+
+.back_to_parent
+    padding: 2em 0
+    margin: 2em 0
+    &::before
+        content: "←"
+        padding-right: 20px
+        font: 1.5em $bold
 
 .single_item_header
     display: grid
-    grid-template-columns: repeat(2, minmax(0, 1fr))
+    grid-template-columns: 60% 30%
     gap: 4em
     @media #{$small, $medium_only}
         grid-template-columns: repeat(1, minmax(0, 1fr))
@@ -199,13 +211,13 @@ h1, h2, h3, h4, h5
         font-size: 2.5em
 
 .description
-    font-size: 1.5em
+    font-size: 1.2em
     margin: 0
     @media #{$small, $medium_only}
         font-size: 1em
 
 .single_item_topics
-    padding-top: 20vh
+    padding-top: 5vh
     width: 70%
     float: right
     padding-bottom: 60vh

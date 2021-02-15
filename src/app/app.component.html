@@ -2,9 +2,13 @@
 
 <!-- scene principale -->
 
+<div class="background home"></div>
+<div class="background specialites"></div>
+<div class="background options"></div>
+<div class="background infos"></div>
 
 <div id="main">
-  <div [@routerAnimation]="prepareRoute(outlet)">
+  <div [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
   <!--   <app-footer></app-footer>

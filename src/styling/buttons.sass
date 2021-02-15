@@ -1,6 +1,37 @@
 @import 'ease.sass'
 @import 'fonts.scss'
 
+.button_simple
+    transition: all .8s $easeOutExpo
+    padding: 1.5em 3em
+    border: 0
+    text-transform: uppercase
+    background: rgba(#000000, 1)
+    font: 11px $bold
+    letter-spacing: 0.2rem
+    outline: none !important
+    color: #ffffff
+    position: relative
+    overflow: hidden
+    border-radius: 60px
+    padding-right: 50px
+    &:hover
+        background-color: #ffffff
+        color: #000000
+        cursor: pointer
+
+.button_simple.download::after, .button_simple.copy_link::after
+    font: 2em $icons
+    padding-left: 0.5em
+    position: absolute
+    top: 0.5em
+
+.button_simple.download::after
+    content: "\E80D"
+
+.button_simple.copy_link::after
+    content: "\E801"
+
 .button_design
     transition: all .8s $easeOutExpo
     padding: 1.5em 3em

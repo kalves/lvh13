@@ -1,11 +1,14 @@
 <section class="single_option_wrapper single_item_wrapper" *ngIf="data.options">
+    <div class="back_to_parent">
+        <a routerLink="/options">Retour aux options</a>
+    </div>
     <div class="single_option_header single_item_header" *ngFor="let data of data.options">
         <div class="single_option_title single_item_title">
             <h1 class="single_title">{{data.title}}</h1>
             <br>
-            <button class="button_design button_right" data-text="Télécharger le PDF">Télécharger le PDF</button>
+            <button class="button_simple download" data-text="Télécharger le PDF">Télécharger le PDF</button>
             <br><br>
-            <button class="button_design button_right" data-text="Copier le lien">Copier le lien</button>
+            <button class="button_simple copy_link" data-text="Copier le lien">Copier le lien</button>
         </div>
         <div class="single_option_description single_item_description">
             <p class="description">We believe that using GraphQL should be easy and fun. One of the ways Apollo is
