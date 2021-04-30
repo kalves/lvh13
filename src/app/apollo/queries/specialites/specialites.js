@@ -2,12 +2,10 @@ import gql from "graphql-tag";
 
 const SPECIALITES_QUERY = gql`
   query Specialites{
-    specialites {
-        id
+    specialites (sort:"acronym:asc"){
         title
-        Acronyme
+        acronym
         slug
-        link
     }
   }
 `;

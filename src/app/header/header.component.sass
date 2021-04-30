@@ -1,45 +1,70 @@
 @import './../../styling/settings'
 
-.header
-    display: flex
-    flex-direction: row
+#header
     width: 100%
     position: fixed
     z-index: 9
-    //background-color: #ffffff
-
-.header.small_header
-    a
-        padding: 1em 3em
-        transition: padding 0.655s $easeOutExpo
-        @media #{$small}
-            padding: 1em
-        h4
-            //transform: scale(0)
-            transform-origin: top left
-            //opacity: 0
-            transition: all 0.655s $easeOutExpo
-
+    top: 0
+    transition: top 1s $easeOutExpo
+    ul
+        display: flex
+        flex-direction: row
+    @media #{$small}
+        border-bottom: 1px solid rgba(#000000, 0.2)
+.search_input
+    font-size: 1.5em !important
 .header .home
     flex-grow: 2.5
     text-align: left
     box-sizing: border-box
     a
-        padding-left: 2em
+        display: flex
+        align-items: center
+        padding: 1em
+
         h4::after
             content: "Marseille"
             display: block
             opacity: 0.5
+            position: absolute
 
-.header .search a
+.header li.search h4
+    a
+        padding: 3em 2em
     //flex-grow: 1.8
-    position: relative
+    .search_header
+        border: none
+        border-bottom: 1px solid rgba(0,0,0,0.1)
+        border-radius: 0
+        padding: 0 0 5px 0
+        position: relative
+        font: 1em $reg
+        &:focus::placeholder
+            opacity: 0
     &::after
         position: absolute
-
+        top: 0
+        right: 0
         content: "\e803"
         font-family: $icons
 
+.header .informations h4
+    position: relative
+    &::after
+        position: absolute
+        font-family: "georgia"
+        font-style: italic
+        font-weight: bolder
+        content: "i"
+        display: flex
+        background: #000000
+        height: 30px
+        width: 30px
+        text-align: center
+        border-radius: 30px
+        align-items: center
+        justify-content: center
+        color: #ffffff
 .header li
     flex-grow: 1
     flex-basis: 0
@@ -51,6 +76,7 @@
         display: none
     @media #{$small}
         display: none
+        border: none
         &:last-child
             display: flex
 
@@ -68,7 +94,7 @@
         top: 0
         left: 0
         position: absolute
-        background-color: rgba(#000000, 0.1 )
+        background-color: $both
 
 .header a:hover
     &::after
@@ -77,6 +103,10 @@
 .header a.active
     &::after
         background-color: rgba(#000000, 0.7 )
+
+.header a.home.active
+    &::after
+        background: $both
 
 .header a.specialites.active
     &::after
@@ -87,20 +117,20 @@
         background: $options
 
 .header a
-    padding: 3em 0
+    padding: 3em 5em
     text-align: center
     display: block
     transition: background-color 1s $easeOutExpo, padding 0.655s $easeOutExpo
 
     @media #{$small}
-        padding: 1em
+        padding: 2em 1em
     h4
         transform: scale(1)
         margin: 0
         opacity: 1
         transform-origin: top left
         transition: all 0.655s $easeOutExpo
-        //text-transform: uppercase
+//text-transform: uppercase
 
 /* menu */
 /** bouton animation **/
@@ -111,7 +141,6 @@
     justify-content: center
     padding: 0 1em
     box-sizing: border-box
-    background-color: $home
     cursor: pointer
 
 .bt-menu-trigger
@@ -129,7 +158,7 @@
         display: block
         width: 100%
         height: 2px
-        background-color: #fff
+        background-color: #000000
         -webkit-touch-callout: none
         -webkit-user-select: none
         -khtml-user-select: none
@@ -144,8 +173,8 @@
         left: 0
         width: 100%
         height: 100%
-        background-color: #ffffff
-        color: #ffffff
+        background-color: #000000
+        color: #000000
         content: ''
         //opacity: 0.5
         -webkit-transition: -webkit-transform 0.3s
@@ -182,26 +211,27 @@
 /** sidebar **/
 
 .sidebar_wrapper
-    height: calc(100vh - 72px)
+    height: 100vh
     width: 100vw
     position: fixed
+    padding: 0 2em
     left: 100vw
-    top: 72px
     z-index: 5
+    background-color: #ffffff
+    color: #000000
     transition: 1s $easeOutExpo
+
     nav
         height: 100vh
-        display: flex
-        flex-direction: column
+        padding-top: 20vh
     li
-        list-style: none
-        height: 100%
         a
             box-sizing: border-box
-            padding: 3em
             display: block
-            height: 100%
-            color: #ffffff
+            color: #000000
+            font: 2.5em $bold
+            h4
+                margin: 0
     &.menu_opened
         left: 0
         transition: 1s $easeOutExpo

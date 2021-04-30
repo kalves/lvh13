@@ -1,39 +1,31 @@
-<section class="single_specialite_wrapper single_item_wrapper" *ngIf="data.specialites">
+<section #total_page class="single_specialite_wrapper single_item_wrapper" *ngIf="data.specialites">
     <div class="back_to_parent">
-        <a routerLink="/specialites">Retour aux spécialités</a>
+        <a routerLink="/specialites">Retour aux specialites</a>
     </div>
-    <div class="single_specialite_header single_item_header">
-        <div class="single_specialite_title single_item_title" *ngFor="let data of data.specialites">
+    <div class="single_specialite_header single_item_header" *ngFor="let data of data.specialites">
+        <div class="single_specialite_title single_item_title">
             <h1 class="single_title">{{data.title}}</h1>
             <br>
-            <button class="button_simple download" data-text="Télécharger le PDF">Télécharger le PDF</button>
+            <a href="/pdf/{{data.slug}}.pdf" target="_blank" download>
+                <button class="button_simple download" data-text="Télécharger le PDF">Télécharger le PDF</button>
+            </a>
             <br><br>
             <button class="button_simple copy_link" data-text="Copier le lien">Copier le lien</button>
         </div>
         <div class="single_specialite_description single_item_description">
-            <p class="description">We believe that using GraphQL should be easy and fun. One of the ways Apollo is
-                designed for this is that if you can
-                write your query in GraphiQL, it'll work with Apollo Client! Because it doesn't assume anything beyond
-                the official
-                GraphQL specification, Apollo works with every GraphQL server implementation, for every language.</p>
+            <markdown class="description" [innerHTML]="data.description"></markdown>
         </div>
     </div>
-    <div class="single_specialite_items single_item_topics">
+    <div class="single_specialite_items single_item_topics" *ngFor="let data of data.specialites[0].detail">
         <section>
-            <h3>Contenus & programmes</h3>
-            <hr>
+            <h3 class="single_items_title accordeon">{{data.title}}</h3>
+            <markdown class="topics_text panel" [innerHTML]="data.descriptif"></markdown>
         </section>
-        <section>
-            <h3>Formations post-bac, écoles, universités</h3>
-            <hr>
-        </section>
-        <section>
-            <h3>Quelles professions ?</h3>
-            <hr>
-        </section>
-        <section>
-            <h3>Témoignages</h3>
-            <hr>
-        </section>
+    </div>
+    <div class="inscription">
+        <a href="https://teleservices.ac-aix-marseille.fr/login/ct_logon_vk.jsp?CT_ORIG_URL=%2Fts&ct_orig_uri=%2Fts"
+            target="blank">
+            <button class="button_design button_right" data-text="je m'inscris">je m'inscris</button>
+        </a>
     </div>
 </section>

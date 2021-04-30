@@ -6,8 +6,23 @@ RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
 RewriteRule ^ - [L]
 # If the requested resource doesn't exist, use index.html
 RewriteRule ^ /index.html
-RewriteCond %{HTTPS} !on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 
+
+</IfModule>
+
+<IfModule mod_expires.c>
+  Header set cache-control: public
+  ExpiresActive on
+
+  ExpiresByType font/ttf      "access plus 1 month"
+  ExpiresByType font/woff     "access plus 1 month"
+  ExpiresByType font/eot     "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  <FilesMatch "\.(ttf|otf|eot|svg)$" >
+    SetOutputFilter DEFLATE
+  </FilesMatch>
 </IfModule>

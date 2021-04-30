@@ -2,12 +2,11 @@ import gql from "graphql-tag";
 
 const OPTIONS_QUERY = gql`
   query Options{
-    options {
-        id
+    options (sort:"acronym:asc"){
         title
-        Acronyme
+        acronym
         slug
-        link
+        
     }
   }
 `;

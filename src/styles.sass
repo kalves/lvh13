@@ -15,6 +15,7 @@ body
     background: #ffffff
     //background-color: lighten($home, 30 )
     transition: background 2s $easeOutExpo
+    overflow: hidden
     .header
         background-color: #ffffff
         transition: background-color 1s $easeOutExpo
@@ -59,10 +60,24 @@ hr
 .white_hr_fat
     border-bottom: 3px solid rgba(#ffffff, 0.75)
 
+strong, b
+    font-family: $bold
+    font-weight: normal
+ul
+    margin: 0
+    padding: 0
+
+li
+    list-style: none
+
+input
+    outline: none
+
 a
     color: inherit
     text-decoration: none
     font-weight: 900
+    outline: none
     &:hover
         text-decoration: underline
 
@@ -85,10 +100,11 @@ h1, h2, h3, h4, h5
     line-height: 1.2em
     position: relative
     overflow: hidden
+    margin: 0
     @media #{$small}
         font-size: 1.5em
     &::after
-        content: ""
+        //content: ""
         height: 1px
         width: 100%
         position: absolute
@@ -103,7 +119,7 @@ h1, h2, h3, h4, h5
 .section_wrapper
     width: 70%
     margin: auto
-    padding-top: 30vh
+    //padding-top: 30vh
 
 .aside
     position: fixed
@@ -117,6 +133,7 @@ h1, h2, h3, h4, h5
         display: none
 #main
     height: 100vh
+    overflow-x: hidden
 
 .main_content
     width: 100%
@@ -134,9 +151,9 @@ h1, h2, h3, h4, h5
 /** section options & specialites **/
 
 .section_container
-    padding-top: 30vh
     width: 70%
     margin: auto
+    padding-top: 30vh
     @media #{$small,$medium_only}
         padding-top: 20vh
         width: 90%
@@ -144,8 +161,12 @@ h1, h2, h3, h4, h5
 .big_title
     font: 5em $black
     margin: 0
-    padding-bottom: 20vh
+    padding-bottom: 10vh
     line-height: 0.9em
+    span
+        font: 0.5em $reg
+        line-height: 0.9em
+
     @media #{$small}
         font-size: 2.5em
 
@@ -179,9 +200,10 @@ h1, h2, h3, h4, h5
 /** single options --- single specialites **/
 
 .single_item_wrapper
-    padding-top: 20vh
+    //padding-top: 20vh
     width: 80%
     margin: auto
+    padding-top: 20vh
     @media #{$small, $medium_only}
         width: 90%
         padding-top: 5vh
@@ -194,10 +216,36 @@ h1, h2, h3, h4, h5
         padding-right: 20px
         font: 1.5em $bold
 
+.accordeon
+    border-bottom: 1px solid #000000
+    padding-bottom: 1em
+    cursor: pointer
+    margin: 0
+    position: relative
+    &::after
+        content: "+"
+        border: 2px solid #000000
+        position: absolute
+        right: 0
+        top: -5px
+        height: 30px
+        width: 30px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+
+.accordeon.active
+    &::after
+        content: "-"
+
+.panel
+    display: none
+
 .single_item_header
     display: grid
-    grid-template-columns: 60% 30%
-    gap: 4em
+    grid-template-columns: 60% 40%
+    gap: 2em
     @media #{$small, $medium_only}
         grid-template-columns: repeat(1, minmax(0, 1fr))
         gap: 2em
@@ -217,12 +265,33 @@ h1, h2, h3, h4, h5
         font-size: 1em
 
 .single_item_topics
-    padding-top: 5vh
+    font-size: 1.2em
+    //padding-top: 5vh
     width: 70%
     float: right
-    padding-bottom: 60vh
+    //padding-bottom: 10vh
     section
-        margin: 2em auto
+        margin: 0em auto 1.5em auto
     @media #{$small, $medium_only}
         width: 100%
         padding-top: 10vh
+
+.single_items_title
+    font: 1.5em $bold
+    line-height: 0.9em
+
+.inscription
+    clear: both
+    height: 70vh
+    width: 100%
+    align-items: center
+    justify-content: center
+    text-align: center
+    button.button_design
+        font-size: 1.3em
+
+.background_specialites
+    background: $specialites !important
+
+.background_options
+    background: $options !important

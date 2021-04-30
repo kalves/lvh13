@@ -5,9 +5,16 @@ const OPTION_QUERY = gql`
     options(where : {slug: $slug}) {
         id
         title
-        Acronyme
+        acronym
         slug
-        link
+        description
+        detail {
+          __typename
+            ... on ComponentDetailObjectif {
+            title
+            descriptif
+          }
+        }
     }    
   }
 `;

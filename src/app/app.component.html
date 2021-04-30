@@ -1,5 +1,6 @@
 <app-header></app-header>
-
+<!-- <app-search-results></app-search-results>
+ -->
 <!-- scene principale -->
 
 <div class="background home"></div>
@@ -7,10 +8,11 @@
 <div class="background options"></div>
 <div class="background infos"></div>
 
-<div id="main">
-  <div [@routeAnimations]="prepareRoute(outlet)">
+<main id="main">
+  <div [@routeAnimations]="prepareRoute(outlet)" class="main_content">
     <router-outlet #outlet="outlet"></router-outlet>
-  </div>
-  <!--   <app-footer></app-footer>
- -->
-</div>
+    </div>
+      <app-footer></app-footer>
+
+ 
+</main>

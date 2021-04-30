@@ -1,0 +1,39 @@
+<section id="results" class="results section_container">
+    <h2>Résultats pour : <span class="terme">{{message}}</span></h2>
+    <br>    
+    <div id="list_results" class="list_items">
+                <!-- <h1 class="white nothing">¯\(°_o)/¯</h1> -->
+
+    <div class="results_section" *ngFor="let search of data.specialites">
+        <div class="item_section">
+        <h3 class="item_title">
+            <span>{{ search.acronym }}<br>
+                <hr class="search_specialites">
+            </span> 
+                <a routerLink="/specialites/{{search.slug}}">{{search.title}}</a>
+            </h3>
+            <br>
+            <a routerLink="/specialites/{{ search.slug }}">
+                <button class="button_design button_right button_item search_specialites" data-text="en savoir plus">en savoir
+                    plus</button>
+            </a>
+        </div>
+    </div>
+    <div class="results_section" *ngFor="let search of data.options">
+        <div class="item_section">
+            <h3 class="item_title">
+                <span>{{ search.acronym }}<br>
+                    <hr class="search_specialites"></span>
+                <a routerLink="/options/{{search.slug}}">{{search.title}}</a>
+            </h3>
+        <br>
+        <a routerLink="/options/{{ search.slug }}">
+            <button class="button_design button_right button_item search_options" data-text="en savoir plus">en savoir
+                plus</button>
+        </a>
+        </div>
+    </div>
+    </div>
+</section>
+
+

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nginit": {
+    "lvh13": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/nginit",
+            "outputPath": "dist/lvh13/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nginit:build"
+            "browserTarget": "lvh13:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "nginit:build:production"
+              "browserTarget": "lvh13:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nginit:build"
+            "browserTarget": "lvh13:build"
           }
         },
         "test": {
@@ -114,15 +114,62 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "nginit:serve"
+            "devServerTarget": "lvh13:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "nginit:serve:production"
+              "devServerTarget": "lvh13:serve:production"
             }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/lvh13/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "lvh13:build",
+            "serverTarget": "lvh13:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "lvh13:build:production",
+              "serverTarget": "lvh13:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "lvh13:build:production",
+            "serverTarget": "lvh13:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }
     }},
-  "defaultProject": "nginit"
+  "defaultProject": "lvh13"
 }

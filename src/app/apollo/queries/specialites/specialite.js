@@ -1,13 +1,21 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag';
 
 const SPECIALITE_QUERY = gql`
   query Specialites($slug: String!){
-    specialites(where : {slug: $slug}) {
+    specialites(where: {slug: $slug}) {
         id
         title
-        Acronyme
+        acronym
         slug
-        link
+        description
+        detail {
+          __typename
+            ... on ComponentDetailDetail {
+            title
+            descriptif
+          }
+        }
+        
     }
   }
 `;

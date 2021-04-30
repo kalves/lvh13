@@ -1,11 +1,12 @@
 <section class=" section_container">
-    <h1 class="big_title">9 Spécialités</h1>
+    <h1 class="big_title">{{leftSpecialitesCount}} Spécialités</h1>
     <div class=" list_items">
-        <div *ngFor="let data of leftSpecialites">
+        <div *ngFor="let data of data.specialites">
             <div class=" item_section">
-                <h1 class=" item_title"><span>{{ data.Acronyme }}<br>
-                        <hr></span>
-                    <a routerLink="/specialites/{{ data.slug }}">{{ data.title }}</a></h1>
+                <h1 class=" item_title">
+                    <span>{{ data.acronym }}<br><hr></span>
+                    <a routerLink="/specialites/{{ data.slug }}">{{ data.title }}</a>
+                </h1>
                 <br>
                 <a routerLink="/specialites/{{ data.slug }}">
                     <button class="button_design button_right button_item" data-text="en savoir plus">en savoir

@@ -8,3 +8,15 @@
     letter-spacing: -1px
     span
         font-size: 0.5em
+
+.sections_container
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    grid-gap: 6em
+    @media #{$small}
+        grid-template-columns: repeat(1, minmax(0, 1fr))
+.section_sub
+    flex-grow: 1
+
+#map
+    height: 100vh

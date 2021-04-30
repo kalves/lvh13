@@ -1,33 +1,38 @@
-<main class="main_content">
-    <section class="section" style="background-image: url(//assets/img/hall.png);">
-        <div class="section_wrapper">
-            <h1 class="home_title">
-                Options<br>& spécialités<br>
-                <span>Lycée Victor Hugo − Rentrée 2021</span></h1>
-
-
-        </div>
+<main class="main_content section_container">
+    <section class="" >
+            <h1 class="big_title">
+                Lycée<br>Victor Hugo<br>
+                
+              </h1>
     </section>
-    <section class="section">
-        <div class="section_wrapper">
-            <h2 class="sub_title">Spécialités</h2>
+    <section class="sections_container">
+    <section class="section_sub">
+            <h2 class="sub_title"><a routerLink="specialites">Spécialités</a></h2>
+            <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
+            designed for this is that if you can
+            write your query in GraphiQL</p>
             <a routerLink="specialites">
-                <button class="button_design button_right" data-text="Voir les spécialités">Voir les
+                <button class="button_design button_right background_specialites" data-text="Voir les spécialités">Voir les
                     spécialités</button>
             </a>
-        </div>
     </section>
-    <section class="section">
-        <div class="section_wrapper">
-            <h2 class="sub_title">Options</h2>
+    
+    <section class="section_sub">
+            <h2 class="sub_title"><a routerLink="options"> Options</a></h2>
+            <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
+                designed for this is that if you can
+                write your query in GraphiQL</p>
             <a routerLink="options">
-                <button class="button_design button_right" data-text="Voir les options">Voir les options</button>
+                <button class="button_design button_right background_options" data-text="Voir les options">Voir les options</button>
             </a>
-        </div>
+    </section>
     </section>
     <section class="section">
-        <div class="section_wrapper">
-            <h2 class="sub_title">Informations pratiques</h2>
+        <div class="">
+            <br><br><br>
+            <mgl-map id="map" [style]="'mapbox://styles/ak85/ckmhk4g9o8v1w17qlbc14p7e1'" [zoom]="[12]" [center]="[5.368276585915851,43.294836712680706]">
+            </mgl-map>
+            
         </div>
     </section>
 </main>

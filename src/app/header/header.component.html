@@ -1,60 +1,71 @@
 <!-- <app-menu></app-menu>
  -->
 <header class="header" id="header">
-    <li class="home">
-        <a routerLink="/" class="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <h4>Lycée Victor Hugo</h4>
-        </a>
-    </li>
-
-    <li>
-        <a routerLink="specialites" class="specialites" routerLinkActive="active">
-            <h4>Spécialités</h4>
-        </a>
-    </li>
-    <li>
-        <a routerLink="options" class="options" routerLinkActive="active">
-            <h4>Options</h4>
-        </a>
-    </li>
-    <li>
-        <a routerLink="informations" class="informations" routerLinkActive="active">
-            <h4>Infos</h4>
-        </a>
-    </li>
-    <li class="search">
-        <a routerLink="recherche" routerLinkActive="active"></a>
-    </li>
-
-    <li (click)="toggleSidebar()">
-        <div id="btn_menu">
-            <div class="bt-menu-trigger">
-                <span></span>
-            </div>
-        </div>
-    </li>
+        <ul>
+            <li class="home">
+                <a routerLink="/" class="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeSidebar()">
+                                <img src="../../assets/img/educ.png" alt="" height="50px" width="50px">
+    <h4>Lycée Victor Hugo</h4>
+                </a>
+            </li>
+            <li class="search" style="flex-grow: 2;">
+                <a>
+                    <h4>
+                        <form id="searchform" (keydown.enter)="onSubmit($event)">
+                            <input id="search_term" ng-model="searchBox" type="text" class="search_header search_input" placeholder="Recherche">
+                        </form> 
+                    </h4>
+                </a>
+            </li>
+            <li>
+                <a routerLink="specialites" class="specialites" routerLinkActive="active">
+                    <h4>Spécialités</h4>
+                </a>
+            </li>
+            <li>
+                <a routerLink="options" class="options" routerLinkActive="active">
+                    <h4>Options</h4>
+                </a>
+            </li>
+            <li>
+                <a routerLink="informations" class="informations" routerLinkActive="active">
+                    <h4></h4>
+                </a>
+            </li>
+            <li (click)="toggleSidebar()">
+                <div id="btn_menu">
+                    <div class="bt-menu-trigger">
+                        <span></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
 </header>
 
 
 <aside id="sidebar" class="sidebar_wrapper" [@popOverState]="stateNameSidebar">
     <nav>
+        <ul>
+            <li>
+                <form (keydown.enter)="onSubmit($event)">
+                    <input id="search_term" ng-model="searchBox" type="text" class="search_header" placeholder="Recherche">
+                </form>
+            </li>
         <li>
-            <a routerLink="cav" routerLinkActive="active" class="cav" (click)="toggleSidebar()">
-                <h4>Cinéma Audiovisuel</h4>
-                <span>CAV</span>
+            <a routerLink="specialites" routerLinkActive="active" (click)="toggleSidebar()">
+                <h4>Spécialités</h4>
             </a>
         </li>
         <li>
-            <a routerLink="hda" routerLinkActive="active" class="hda" (click)="toggleSidebar()">
-                <h4>Histoire des arts</h4>
-                <span>HDA</span>
+            <a routerLink="options" routerLinkActive="active" class="hda" (click)="toggleSidebar()">
+                <h4>Options</h4>
             </a>
         </li>
         <li>
-            <a routerLink="theatre" routerLinkActive="active" class="theatre" (click)="toggleSidebar()">
-                <h4>Arts du spectable</h4>
-                <span>Théatre</span>
+            <a routerLink="informations" routerLinkActive="active" class="theatre" (click)="toggleSidebar()">
+                <h4>Infos pratiques</h4>
             </a>
         </li>
+        </ul>
     </nav>
 </aside>
