@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SingleSpecialitesComponent } from './single-specialites.component';
 
@@ -6,7 +6,7 @@ describe('SingleSpecialitesComponent', () => {
   let component: SingleSpecialitesComponent;
   let fixture: ComponentFixture<SingleSpecialitesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SingleSpecialitesComponent ]
     })
