@@ -1,0 +1,41 @@
+<main class="section_container" [@theParentAnimation]="state">
+            <hr class="hr_home">
+
+<div *ngIf="router.children.length === 0" >
+    <section class="section_sub">
+    
+        <h2 class="sub_title"><a routerLink="general">Lycée Général</a></h2>
+        <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
+            designed for this is that if you can
+            write your query in GraphiQL</p>
+        <a routerLink="general/specialites">
+            <button class="button_design button_right background_specialites" data-text="Voir les spécialités">Voir les
+                spécialités</button>
+        </a>
+        <br><br>
+        <a routerLink="general/options">
+            <button class="button_design button_right background_options" data-text="Voir les options">Voir les
+                options</button>
+        </a>
+        <hr class="hr_home">
+    
+    </section>
+    <section class="section_sub">
+        <h2 class="sub_title"><a routerLink="technologique">Lycée Technologique</a></h2>
+        <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
+            designed for this is that if you can
+            write your query in GraphiQL</p>
+        <a routerLink="technologique/specialites">
+            <button class="button_design button_right background_options" data-text="Voir les options">Voir les
+                options</button>
+        </a>
+        <hr class="hr_home">
+    
+    </section>
+    </div>
+
+    <div [@theChildAnimation]="state">
+        <router-outlet></router-outlet>
+        </div>
+    </main>
+    <button (click)="toggleState()">Animate</button> State: {{state}}

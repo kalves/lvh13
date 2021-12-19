@@ -9,6 +9,7 @@ import {
   query,
   group,
   sequence,
+  animateChild,
 } from "@angular/animations";
 import { gsap } from "gsap/all";
 import { element } from "protractor";
@@ -17,7 +18,7 @@ import Scrollbar from "smooth-scrollbar";
 
 export function init_scroll() {
   const bodyScrollBar = Scrollbar.init(document.getElementById("main"), {
-    damping: 0.1,
+    damping: 0.2,
     delegateTo: document,
   });
 }
@@ -32,7 +33,7 @@ export function back_to_top(_Time) {
   scroller.addListener(function (status) {
     let header = document.getElementById("header");
     if (scroller.offset.y >= 10) {
-      header.style.top = "-150px";
+      //header.style.top = "-150px";
     } else {
       header.style.top = "0";
     }
@@ -54,9 +55,12 @@ export function fixed_element() {
   });
 }
 
+// parent-child animation
+
 export const slider = trigger("routeAnimations", [
   transition(":increment", slideTo("right")),
   transition(":decrement", slideTo("left")),
+  //group([query("@routeAnimations", animateChild(), { optional: true })]),
 ]);
 
 function slideTo(direction) {
@@ -71,6 +75,7 @@ function slideTo(direction) {
           [direction]: 0,
           width: "100%",
         }),
+        query("@*", [animateChild()], optional),
       ],
       optional
     ),
@@ -80,15 +85,15 @@ function slideTo(direction) {
         ":leave",
         [
           animate(
-            "1000ms cubic-bezier(0.16, 1, 0.3, 1)",
-            style({ [direction]: "50%", opacity: 0 })
+            "600ms cubic-bezier(0.16, 1, 0.3, 1)",
+            style({ [direction]: "0%", opacity: 0, filter: "blur(8px)" })
           ),
         ],
         optional
       ),
       query(":enter", [
         animate(
-          "1000ms 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+          "1000ms 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
           style({ [direction]: "0%", opacity: 1 })
         ),
       ]),
@@ -102,7 +107,7 @@ export const reveal = trigger("reveal", [
       opacity: 0,
     }),
     animate(
-      "0.8s 850ms cubic-bezier(0, 0.55, 0.45, 1)",
+      "0.8s 0.8s cubic-bezier(0, 0.55, 0.45, 1)",
       style({
         opacity: 1,
       })
@@ -114,16 +119,16 @@ export const popOverState = trigger("popOverState", [
   state(
     "show",
     style({
-      visibility: "visible",
-      opacity: 1,
+      //visibility: "visible",
+      //opacity: 1,
       // transform: 'translateY(0)'
     })
   ),
   state(
     "hide",
     style({
-      visibility: "hidden",
-      opacity: 0,
+      //visibility: "hidden",
+      //opacity: 0,
       // transform: 'translateY(-100vh)'
     })
   ),
@@ -141,20 +146,27 @@ export function open_sidebar() {
 }
 
 export function accordeon() {
+  var element = document.getElementsByClassName("panel");
+
+  // Iterate through the retrieved elements and add the necessary class names.
+  for (let i = 0; i < element.length; i++) {
+    element[i].classList.add("panel_hidden");
+  }
   let acc = document.getElementsByClassName("accordeon");
 
   for (let i = 0; i < acc.length; i++) {
+    acc[i].classList.remove("active");
     acc[i].addEventListener("click", function () {
-      /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
       this.classList.toggle("active");
 
-      /* Toggle between hiding and showing the active panel */
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
+      let panel = this.nextElementSibling;
+
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        panel.classList.add("panel_hidden");
       } else {
-        panel.style.display = "block";
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.classList.remove("panel_hidden");
       }
     });
   }

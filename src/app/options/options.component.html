@@ -1,17 +1,29 @@
-<section class="section_options section_container">
-    <h1 class="big_title">{{leftOptionsCount}} Options</h1>
+<section class="section_options" *ngIf="route.children.length === 0">
+    <div class="block_header_container">
+        <div class="block_header_content title">
+            <h1 class="big_title">Choisissez<br>parmi {{leftOptionsCount}}<br>options</h1>
+            <h3 class="sub_title">Deux choix (facultatifs) en seconde,<br>première et terminale.</h3>
+        </div>
+       <!--  <div class="block_header_content hours">
+            <h2>Horaires </h2>
+            <p><b>Seconde :</b> 3 heures
+            <br><b>Première :</b> 3 heures
+            <br><b>Terminale :</b> 3 heuress</p>
+        </div> -->
+    </div>
     <div class="list_options list_items">
         <div *ngFor="let data of data.options">
             <div class="option_section item_section">
                 <h1 class="options_title item_title"><span>{{ data.acronym }}<br>
                         <hr></span>
-                    <a routerLink="/options/{{ data.slug }}">{{ data.title }}</a></h1>
-                <br>
+                    <a routerLink="{{ data.slug }}">{{ data.title }}</a></h1>
+                <!-- <br>
                 <a routerLink="/options/{{ data.slug }}">
                     <button class="button_design button_right button_item" data-text="en savoir plus">en savoir
                         plus</button>
-                </a>
+                </a> -->
             </div>
         </div>
     </div>
 </section>
+<router-outlet></router-outlet>

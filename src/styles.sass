@@ -6,46 +6,55 @@
 @include font('sofia_bold', '/assets/fonts/sofi_pro/SofiaPro-Bold')
 @include font('sofia_black', '/assets/fonts/sofi_pro/SofiaPro-Black')
 
+@include font('proxima', '/assets/fonts/proxima/ProximaSoft-Regular')
+@include font('proxima_light', '/assets/fonts/proxima/ProximaSoft-Light')
+@include font('proxima_bold', '/assets/fonts/proxima/ProximaSoft-Bold')
+@include font('proxima_black', '/assets/fonts/proxima/ProximaSoft-Black')
+
 @include font('icons', '/assets/fonts/icons/font/icons')
 
+hr
+    border-color: rgba(#000000, 0.1) !important
 body
     font-family: $ligth
     margin: 0
     padding: 0
-    background: #ffffff
+    //background: #ffffff
     //background-color: lighten($home, 30 )
     transition: background 2s $easeOutExpo
     overflow: hidden
+    background-color: $main
+
     .header
-        background-color: #ffffff
+        //background-color: #ffffff
         transition: background-color 1s $easeOutExpo
 
 body[data-name="options"]
     //background: $options
     //transition: background 1s $easeOutExpo
-    .header
-        background-color: #ffffff
-        transition: background-color 2s $easeOutExpo
+    //.header
+        //background-color: #ffffff
+        //transition: background-color 2s $easeOutExpo
 
-    .background.options
-        opacity: 1
-        visibility: visible
-        transition: opacity 2.8s $easeOutExpo
+    //.background.options
+        //opacity: 1
+        //visibility: visible
+        //transition: opacity 2.8s $easeOutExpo
 
 body[data-name="specialites"]
     //background: $specialites
     //transition: background 2s $easeOutExpo
-    .header
-        background-color: #ffffff
-        transition: background-color 1s $easeOutExpo
+    //.header
+        //background-color: #ffffff
+        //transition: background-color 1s $easeOutExpo
 
-    .background.specialites
-        opacity: 1
-        visibility: visible
-        transition: opacity 2.8s $easeOutExpo
+    //.background.specialites
+        //opacity: 1
+        //visibility: visible
+        //transition: opacity 2.8s $easeOutExpo
 
 body[data-name="recherche"]
-    background: #111111
+    background: #666666
     transition: background 2s $easeOutExpo
 
 hr
@@ -76,7 +85,7 @@ input
 a
     color: inherit
     text-decoration: none
-    font-weight: 900
+    font-weight: 600
     outline: none
     &:hover
         text-decoration: underline
@@ -96,7 +105,7 @@ h1, h2, h3, h4, h5
 .sub_title
     //font-style: italic
     font-weight: 700
-    font-size: 3em
+    font-size: 2em
     line-height: 1.2em
     position: relative
     overflow: hidden
@@ -111,14 +120,15 @@ h1, h2, h3, h4, h5
         bottom: 10px
         background-color: rgba(#000000, 0.5)
         margin-left: 25px
-
+    a
+        text-decoration: underline
 .section
     min-height: 100vh
     width: 100%
 
 .section_wrapper
     width: 70%
-    margin: auto
+    margin: auto 0 auto auto
     //padding-top: 30vh
 
 .aside
@@ -134,14 +144,17 @@ h1, h2, h3, h4, h5
 #main
     height: 100vh
     overflow-x: hidden
+    left: 0vw
+    transition: left 0.8s $easeOutExpo
 
 .main_content
     width: 100%
     //margin: 0 0 0 25%
     //padding: 20vh 3em
     box-sizing: border-box
-    min-height: 200vh
+    //min-height: 200vh
     overflow: hidden
+    position: relative
     @media #{$small}
         margin: 0
         width: 100%
@@ -151,35 +164,78 @@ h1, h2, h3, h4, h5
 /** section options & specialites **/
 
 .section_container
-    width: 70%
-    margin: auto
-    padding-top: 30vh
+    width: calc(90% - 25px)
+    margin: auto 0 auto auto
+    padding-top: 15vh
+    //padding-right: 10%
+    box-sizing: border-box
+    padding-bottom: 10vh
     @media #{$small,$medium_only}
-        padding-top: 20vh
-        width: 90%
+        //padding-top: 20vh
+        width: calc(100% - 40px)
+        margin: auto
+        padding-right: auto
 
 .big_title
-    font: 5em $black
+    hyphens: auto
+    font: 4.5em $black
     margin: 0
-    padding-bottom: 10vh
+    padding-bottom: 5vh
     line-height: 0.9em
+    font-weight: 700
+    opacity: 0.75
     span
         font: 0.5em $reg
-        line-height: 0.9em
+        line-height: 0.8em
 
     @media #{$small}
         font-size: 2.5em
 
+.home_title
+    font-variant: normal
+    margin: 0
+    font: 8.5em $black
+    line-height: 0.9em
+    letter-spacing: -1px
+    @media #{$small}
+        font: 5em $black
+    span
+        opacity: 0.2
+        font: 1em $black
+
+.block_header_container
+    display: flex
+    min-height: 40vh
+    margin: 2.5% auto 10% auto
+
+.block_header_content
+    padding-right: 10%
+    h2
+        font: 1.5em $bold
+        opacity: 0.4
+.block_header_content.title
+    flex-grow: 2
+.hr_hours_header
+    border: none
+    border-bottom: 1px solid rgba(0,0,0,0.1)
+.hr_block_header
+    border: none
+    border-bottom: 1px solid rgba(0,0,0,0.1)
 .list_items
+    //width: 90%
     display: grid
     grid-template-columns: repeat(2, minmax(0, 1fr))
-    grid-gap: 6em
+    grid-gap: 1.5em
     @media #{$small,$medium_only}
         grid-template-columns: repeat(1, minmax(0, 1fr))
         grid-gap: 2em
 
+.hr_home
+    border: none
+    border-bottom: 1px solid #333333
+    margin: 1em 0
+
 .item_section
-    margin-bottom: 20%
     @media #{$small,$medium_only}
         margin-bottom: 0%
 .item_title
@@ -201,30 +257,32 @@ h1, h2, h3, h4, h5
 
 .single_item_wrapper
     //padding-top: 20vh
-    width: 80%
-    margin: auto
-    padding-top: 20vh
+    //width: calc(90% - 25px)
+    margin: auto 0 auto auto
+    //padding-top: 20vh
+    padding-right: 10%
+    box-sizing: border-box
     @media #{$small, $medium_only}
-        width: 90%
-        padding-top: 5vh
+        //width: calc( 100% - 40px )
+        //padding-top: 15vh
+        padding-right: 0
+        margin: auto
 
 .back_to_parent
-    padding: 2em 0
-    margin: 2em 0
     &::before
         content: "←"
-        padding-right: 20px
-        font: 1.5em $bold
+        padding-right: 10px
+        font: 1em $bold
 
 .accordeon
-    border-bottom: 1px solid #000000
-    padding-bottom: 1em
+    border-bottom: 1px solid rgba(#000000, 0.25 )
+    padding-bottom: 0.5em
     cursor: pointer
     margin: 0
     position: relative
     &::after
         content: "+"
-        border: 2px solid #000000
+        border: 0px solid #000000
         position: absolute
         right: 0
         top: -5px
@@ -234,29 +292,46 @@ h1, h2, h3, h4, h5
         display: flex
         align-items: center
         justify-content: center
+        opacity: 0.5
+        font-family: "arial"
 
 .accordeon.active
     &::after
         content: "-"
 
 .panel
-    display: none
+    overflow: hidden
+    max-height: 0
+    display: block
+    transition: max-height 0.8s $easeOutExpo, opacity 0.8s $easeOutExpo
+.panel.panel_hidden
+    max-height: null
+    transition: max-height 0.8s $easeOutExpo, opacity 0.8s $easeOutExpo
 
 .single_item_header
     display: grid
-    grid-template-columns: 60% 40%
+    //grid-template-columns: 20% 70%
     gap: 2em
+    margin-bottom: 10%
     @media #{$small, $medium_only}
         grid-template-columns: repeat(1, minmax(0, 1fr))
         gap: 2em
 
 .single_title
-    font: 4em $black
+    font: 10em $black
     line-height: 0.9em
     letter-spacing: -1px
     margin: 0
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    padding-left: var(--padding)
+    padding-right: var(--padding)
+    background-image: linear-gradient(90deg,var(--start-color),var(--end-color))
+    --start-color: #7928CA
+    --end-color: #FF0080
     @media #{$small}
-        font-size: 2.5em
+        font-size: 4em
 
 .description
     font-size: 1.2em
@@ -265,16 +340,18 @@ h1, h2, h3, h4, h5
         font-size: 1em
 
 .single_item_topics
-    font-size: 1.2em
+    font-size: 1em
     //padding-top: 5vh
-    width: 70%
+    //width: calc(70% - 2em)
     float: right
     //padding-bottom: 10vh
     section
         margin: 0em auto 1.5em auto
     @media #{$small, $medium_only}
         width: 100%
-        padding-top: 10vh
+        h3
+            font-size: 1em
+        //padding-top: 10vh
 
 .single_items_title
     font: 1.5em $bold
@@ -291,7 +368,25 @@ h1, h2, h3, h4, h5
         font-size: 1.3em
 
 .background_specialites
-    background: $specialites !important
+    background: $both !important
 
 .background_options
     background: $options !important
+
+.background_bts
+    background: $bts !important
+/* internal nav */
+
+.internal_nav_container
+    height: 70vh
+    width: 100%
+    display: block
+    clear: both
+.internal_nav_content
+    display: flex
+    height: 100%
+    align-items: center
+.internal_nav_button
+    width: 50%
+    &:last-child
+        text-align: right

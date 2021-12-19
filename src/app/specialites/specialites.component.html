@@ -1,18 +1,34 @@
-<section class=" section_container">
-    <h1 class="big_title">{{leftSpecialitesCount}} Spécialités</h1>
+<section *ngIf="route.children.length === 0">
+
+     <div class="block_header_container">
+        <div class="block_header_content title">
+            <h1 class="big_title">Choisissez<br> parmi {{leftSpecialitesCount}}<br> spécialités</h1>
+                        <h3 class="sub_title">Trois choix (obligatoires) en première,<br>deux choix en terminale.</h3>
+<!--                         <p>4h par spécialités en première, 6h en terminale.</p>
+ -->
+        </div>
+       <!--  <div class="block_header_content hours">
+            <h2>Horaires </h2>
+            <p><b>Seconde :</b> -
+                <br><b>Première :</b> 3 heures
+                <br><b>Terminale :</b> 3 heuress</p>
+        </div>  -->
+    </div>
+
     <div class=" list_items">
         <div *ngFor="let data of data.specialites">
             <div class=" item_section">
                 <h1 class=" item_title">
                     <span>{{ data.acronym }}<br><hr></span>
-                    <a routerLink="/specialites/{{ data.slug }}">{{ data.title }}</a>
+                    <a routerLink="{{ data.slug }}">{{ data.title }}</a>
                 </h1>
-                <br>
+               <!--  <br>
                 <a routerLink="/specialites/{{ data.slug }}">
                     <button class="button_design button_right button_item" data-text="en savoir plus">en savoir
                         plus</button>
-                </a>
+                </a> -->
             </div>
         </div>
     </div>
 </section>
+<router-outlet ></router-outlet>

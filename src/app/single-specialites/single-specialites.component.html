@@ -1,11 +1,12 @@
 <section #total_page class="single_specialite_wrapper single_item_wrapper" *ngIf="data.specialites">
-    <div class="back_to_parent">
-        <a routerLink="/specialites">Retour aux specialites</a>
-    </div>
     <div class="single_specialite_header single_item_header" *ngFor="let data of data.specialites">
+    <!-- <div class="back_to_parent">
+        <a routerLink="/specialites">Toutes les specialites</a>
+    </div> -->
         <div class="single_specialite_title single_item_title">
-            <h1 class="single_title">{{data.title}}</h1>
-            <br>
+            <h1 class="single_title">{{data.acronym}}</h1>
+            <h2 class="sub_title">{{data.title}}</h2>
+           <br>
             <a href="/pdf/{{data.slug}}.pdf" target="_blank" download>
                 <button class="button_simple download" data-text="Télécharger le PDF">Télécharger le PDF</button>
             </a>
@@ -16,16 +17,24 @@
             <markdown class="description" [innerHTML]="data.description"></markdown>
         </div>
     </div>
-    <div class="single_specialite_items single_item_topics" *ngFor="let data of data.specialites[0].detail">
-        <section>
-            <h3 class="single_items_title accordeon">{{data.title}}</h3>
-            <markdown class="topics_text panel" [innerHTML]="data.descriptif"></markdown>
-        </section>
+    <div>
+        <div class="single_specialite_items single_item_topics" *ngFor="let data of data.specialites[0].detail">
+            <section>
+                <h3 class="single_items_title accordeon">{{data.title}}</h3>
+                <markdown class="topics_text panel" [innerHTML]="data.descriptif"></markdown>
+            </section>
+        </div>
     </div>
-    <div class="inscription">
+    <!-- <div class="inscription">
         <a href="https://teleservices.ac-aix-marseille.fr/login/ct_logon_vk.jsp?CT_ORIG_URL=%2Fts&ct_orig_uri=%2Fts"
             target="blank">
             <button class="button_design button_right" data-text="je m'inscris">je m'inscris</button>
         </a>
-    </div>
+    </div> -->
+        <!--   <div class="internal_nav_container">
+                <div class="internal_nav_content">
+                    <div class="internal_nav_button">back</div>
+                    <div class="internal_nav_button">next</div>
+                </div>
+            </div> -->
 </section>

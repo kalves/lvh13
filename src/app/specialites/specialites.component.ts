@@ -3,6 +3,7 @@ import { Apollo } from "apollo-angular";
 import gql from "graphql-tag";
 import SPECIALITES_QUERY from "../apollo/queries/specialites/specialites";
 import { Subscription } from "rxjs";
+import { ActivatedRoute, RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-specialites",
@@ -19,7 +20,7 @@ export class SpecialitesComponent implements OnInit {
 
   title = "Spécialités";
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, public route: ActivatedRoute) {}
   ngOnInit(): void {
     this.querySpecialites = this.apollo
       .watchQuery({
@@ -31,5 +32,10 @@ export class SpecialitesComponent implements OnInit {
         this.loading = result.loading;
         this.errors = result.errors;
       });
+  }
+  prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
+    );
   }
 }

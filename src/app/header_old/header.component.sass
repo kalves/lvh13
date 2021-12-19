@@ -1,0 +1,264 @@
+@import './../../styling/settings'
+
+#header
+    width: 100%
+    position: fixed
+    z-index: 9
+    top: 0
+    transition: top 1s $easeOutExpo
+    padding: 2em
+    box-sizing: border-box
+    ul
+        display: flex
+        flex-direction: row
+    @media #{$small}
+        border-bottom: 1px solid rgba(#000000, 0.2)
+
+.header .home
+    flex-grow: 2.5
+    text-align: left
+    box-sizing: border-box
+    a
+        display: flex
+        align-items: center
+        //padding: 1em
+        font: 1.5em $bold
+
+        h4::after
+            content: "Marseille"
+            display: block
+            opacity: 0.5
+            position: absolute
+
+.header li.search h4
+
+    .search_header
+        border: none
+        border: none
+        border-radius: 50px
+        background-color: rgba(#000000, 0.72)
+        padding: 1em
+        color: #ffffff
+        min-width: 150px
+        position: relative
+        font: 1em $reg
+        &:focus::placeholder
+            opacity: 0
+    &::after
+        position: absolute
+        top: 14px
+        right: 14px
+        content: "\e803"
+        font-family: $icons
+        color: #ffffff
+
+.header .informations h4
+    position: relative
+    &::after
+        position: absolute
+        font-family: "georgia"
+        font-style: italic
+        font-weight: bolder
+        content: "i"
+        display: flex
+        background: #000000
+        height: 30px
+        width: 30px
+        text-align: center
+        border-radius: 30px
+        align-items: center
+        justify-content: center
+        color: #ffffff
+.header li
+    flex-grow: 0.2
+    flex-basis: 0
+    color: #000000
+    list-style: none
+    //border-bottom: 1px solid rgba(#000000, 0.2)
+    //border-right: 1px solid rgba(#000000, 0.2)
+    &:last-child
+        //display: none
+    @media #{$small}
+        display: none
+        border: none
+        &:last-child
+            display: flex
+
+        &:first-child
+            flex-grow: inherit
+            flex-basis: inherit
+            width: 100%
+            display: inline-block
+.header a
+    position: relative
+    &:after
+        //content: ""
+        height: 5px
+        width: 100%
+        top: 0
+        left: 0
+        position: absolute
+        background-color: $both
+
+.header a:hover
+    &::after
+        background-color: rgba(#000000, 0.3 )
+
+.header a.active
+    &::after
+        background-color: rgba(#000000, 0.7 )
+
+.header a.home.active
+    &::after
+        background: $both
+
+.header a.specialites.active
+    &::after
+        background: $specialites
+
+.header a.options.active
+    &::after
+        background: $options
+
+.header a
+    //padding: 3em 5em
+    text-align: center
+    display: block
+    transition: background-color 1s $easeOutExpo, padding 0.655s $easeOutExpo
+
+    @media #{$small}
+        padding: 2em 1em
+    h4
+        transform: scale(1)
+        margin: 0
+        opacity: 1
+        transform-origin: top left
+        transition: all 0.655s $easeOutExpo
+//text-transform: uppercase
+
+/* menu */
+/** bouton animation **/
+
+#btn_menu
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 1em
+    box-sizing: border-box
+    cursor: pointer
+
+.bt-menu-trigger
+    font-size: 2em
+    width: 40px
+    margin: auto
+    //height: 3em
+    position: relative
+    @media #{$medium_only, $small}
+        display: inline-block
+    span
+        position: absolute
+        top: 50%
+        left: 0
+        display: block
+        width: 100%
+        height: 2px
+        background-color: #000000
+        -webkit-touch-callout: none
+        -webkit-user-select: none
+        -khtml-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+        -webkit-transition: background-color 0.3s
+        transition: background-color 0.3s
+
+    & span:after, & span:before
+        position: absolute
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: #000000
+        color: #000000
+        content: ''
+        //opacity: 0.5
+        -webkit-transition: -webkit-transform 0.3s
+        transition: transform 0.3s, opacity 0.3s
+
+    & span:before
+        -webkit-transform: translateY(-0.3em)
+        transform: translateY(-0.3em)
+
+    & span:after
+        -webkit-transform: translateY(0.3em)
+        transform: translateY(0.3em)
+
+    &.bt-menu-open span:before, &.bt-menu-open:hover span:before
+        //-webkit-transform: translateY(-0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(0em) translateX(0em) rotate(0deg) scaleX(1)
+        mix-blend-mode: normal
+
+    &.bt-menu-open span:after, &.bt-menu-open:hover span:after
+        //-webkit-transform: translateY(0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(0em) translateX(0em) rotate(0deg) scaleX(1)
+        mix-blend-mode: normal
+
+    &:hover span:before
+        //opacity: 1
+        //-webkit-transform: translateY(-0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(-0.3em) translateX(-0.5em) rotate(0deg) scaleX(1)
+
+    &:hover span:after
+        //opacity: 1
+        //-webkit-transform: translateY(0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
+        transform: translateY(0.3em) translateX(0.5em) rotate(0deg) scaleX(1)
+
+/** sidebar **/
+
+.sidebar_wrapper
+    height: 100vh
+    width: 25vw
+    position: fixed
+    left: 0vw
+    box-sizing: border-box
+    z-index: 5
+    //background-color: #ffffff
+    //border-right: 1px solid rgba(#000000, 0.1)
+    color: #000000
+    transition: left 0.4s $easeOutExpo
+
+    nav
+        height: 100vh
+        padding-top: 31vh
+    ul
+        margin: 0
+        padding: 0
+    li
+        border: none
+        //border-bottom: 1px solid rgba(#000000, 0.1)
+        a
+            box-sizing: border-box
+            display: block
+            color: #000000
+            font: 1.1em $ligth
+            padding: 0.5em 1.75em
+            h4
+                margin: 0
+
+        a.active
+            font-family: $bold
+            text-decoration: underline
+    &.menu_opened
+        left: 0
+        transition: 0.6s $easeOutExpo
+
+#overlay
+    display: none
+
+    background-color: rgba(#000000, 0.5)
+    height: 100vh
+    width: 100vw
+    position: fixed
+    z-index: 1
+    visibility: hidden
+    opacity: 0
+    cursor: pointer

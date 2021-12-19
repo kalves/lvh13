@@ -1,237 +1,220 @@
 @import './../../styling/settings'
 
-#header
-    width: 100%
+.header
+    width: 100vw
     position: fixed
     z-index: 9
     top: 0
     transition: top 1s $easeOutExpo
-    ul
-        display: flex
-        flex-direction: row
-    @media #{$small}
-        border-bottom: 1px solid rgba(#000000, 0.2)
-.search_input
-    font-size: 1.5em !important
-.header .home
-    flex-grow: 2.5
-    text-align: left
     box-sizing: border-box
-    a
+    background-color: $main
+    border-bottom: 1px solid rgba(#000000, 0.1)
+.header ul
+    padding: 0
+    margin: 0
+    display: grid
+    grid-template-columns: 10% 20% 40% 10% 10% 10%
+    @media #{$small}
+        grid-template-columns: 80% 20%
+        width: 100%
+    li
+        padding: 0px 20px
+        box-sizing: border-box
+        border-right: 1px solid rgba(#000000, 0.1)
+
+    li.home
         display: flex
         align-items: center
-        padding: 1em
-
-        h4::after
-            content: "Marseille"
-            display: block
-            opacity: 0.5
-            position: absolute
-
-.header li.search h4
-    a
-        padding: 3em 2em
-    //flex-grow: 1.8
-    .search_header
-        border: none
-        border-bottom: 1px solid rgba(0,0,0,0.1)
-        border-radius: 0
-        padding: 0 0 5px 0
-        position: relative
-        font: 1em $reg
-        &:focus::placeholder
-            opacity: 0
-    &::after
-        position: absolute
-        top: 0
-        right: 0
-        content: "\e803"
-        font-family: $icons
-
-.header .informations h4
-    position: relative
-    &::after
-        position: absolute
-        font-family: "georgia"
-        font-style: italic
-        font-weight: bolder
-        content: "i"
+        padding: 0 20px
+        font-family: $bold
+        .span_title
+            font-family: $ligth
+            font-weight: 100
+            opacity: 0.3
+    li.btn_menu
         display: flex
-        background: #000000
-        height: 30px
-        width: 30px
-        text-align: center
-        border-radius: 30px
         align-items: center
         justify-content: center
-        color: #ffffff
-.header li
-    flex-grow: 1
-    flex-basis: 0
-    color: #000000
-    list-style: none
-    border-bottom: 1px solid rgba(#000000, 0.2)
-    border-right: 1px solid rgba(#000000, 0.2)
-    &:last-child
-        display: none
-    @media #{$small}
-        display: none
-        border: none
-        &:last-child
-            display: flex
-
-        &:first-child
-            flex-grow: inherit
-            flex-basis: inherit
+        //background-color: darken($main, 10%)
+        &:hover
+            cursor: pointer
+            //background-color: darken($main, 20%)
+    li.search
+        padding: 10px
+        .search_input
             width: 100%
-            display: inline-block
-.header a
-    position: relative
-    &:after
-        content: ""
-        height: 5px
-        width: 100%
-        top: 0
-        left: 0
-        position: absolute
-        background-color: $both
-
-.header a:hover
-    &::after
-        background-color: rgba(#000000, 0.3 )
-
-.header a.active
-    &::after
-        background-color: rgba(#000000, 0.7 )
-
-.header a.home.active
-    &::after
-        background: $both
-
-.header a.specialites.active
-    &::after
-        background: $specialites
-
-.header a.options.active
-    &::after
-        background: $options
-
-.header a
-    padding: 3em 5em
-    text-align: center
-    display: block
-    transition: background-color 1s $easeOutExpo, padding 0.655s $easeOutExpo
-
+            border: none
+            background: transparent
+            font: 2em $ligth
+            font-weight: 100
+            opacity: 0.3
+            &:focus
+                opacity: 1
+.navigation_buttons
     @media #{$small}
-        padding: 2em 1em
-    h4
-        transform: scale(1)
-        margin: 0
-        opacity: 1
-        transform-origin: top left
-        transition: all 0.655s $easeOutExpo
-//text-transform: uppercase
-
-/* menu */
-/** bouton animation **/
-
-#btn_menu
-    display: flex
-    align-items: center
-    justify-content: center
-    padding: 0 1em
-    box-sizing: border-box
-    cursor: pointer
-
-.bt-menu-trigger
-    font-size: 2em
-    width: 40px
-    margin: auto
-    //height: 3em
-    position: relative
-    @media #{$medium_only, $small}
-        display: inline-block
-    span
-        position: absolute
-        top: 50%
-        left: 0
-        display: block
-        width: 100%
-        height: 2px
-        background-color: #000000
-        -webkit-touch-callout: none
-        -webkit-user-select: none
-        -khtml-user-select: none
-        -moz-user-select: none
-        -ms-user-select: none
-        user-select: none
-        -webkit-transition: background-color 0.3s
-        transition: background-color 0.3s
-
-    & span:after, & span:before
-        position: absolute
-        left: 0
-        width: 100%
-        height: 100%
-        background-color: #000000
-        color: #000000
-        content: ''
-        //opacity: 0.5
-        -webkit-transition: -webkit-transform 0.3s
-        transition: transform 0.3s, opacity 0.3s
-
-    & span:before
-        -webkit-transform: translateY(-0.3em)
-        transform: translateY(-0.3em)
-
-    & span:after
-        -webkit-transform: translateY(0.3em)
-        transform: translateY(0.3em)
-
-    &.bt-menu-open span:before, &.bt-menu-open:hover span:before
-        //-webkit-transform: translateY(-0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
-        transform: translateY(0em) translateX(0em) rotate(0deg) scaleX(1)
-        mix-blend-mode: normal
-
-    &.bt-menu-open span:after, &.bt-menu-open:hover span:after
-        //-webkit-transform: translateY(0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
-        transform: translateY(0em) translateX(0em) rotate(0deg) scaleX(1)
-        mix-blend-mode: normal
-
-    &:hover span:before
-        //opacity: 1
-        //-webkit-transform: translateY(-0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
-        transform: translateY(-0.3em) translateX(-0.5em) rotate(0deg) scaleX(1)
-
-    &:hover span:after
-        //opacity: 1
-        //-webkit-transform: translateY(0.36em) translateX(0.65em) rotate(0deg) scaleX(0.6)
-        transform: translateY(0.3em) translateX(0.5em) rotate(0deg) scaleX(1)
-
-/** sidebar **/
+        display: none
 
 .sidebar_wrapper
+    position: fixed
+    z-index: 3
+    width: 30%
+    left: -100%
+    top: 45px
+    height: 100vh
+    overflow: hidden
+    //align-items: center
+    //justify-content: center
+    //display: flex
+    background: $main
+    border-right: 1px solid rgba(#000000, 0.5)
+    transition: left 1.2s $easeOutExpo
+    box-sizing: border-box
+    .navigation_fixed
+        //position: absolute
+        width: 100%
+        margin: auto
+        transition: top 1.2s $easeOutExpo
+        //top: 100vh
+        //padding-top: 72px
+        box-sizing: border-box
+    @media #{$small}
+        width: 100vw
+        left: -100vw
+    li.firstnav_button
+
+        //border-bottom: 1px solid rgba(#000000, 0.1)
+        padding: 10px 0
+        display: grid
+        grid-template-columns: 80% 20%
+        a
+            padding: 0
+            display: block
+            font-size: 1.25em
+            //text-decoration: underline
+
+.sidebar_wrapper.menu_opened
+    left: 0
+    transition: left 0.8s $easeOutExpo
+    .navigation_fixed
+        top: 0vh
+        transition: top 0.8s $easeOutExpo
+
+.firstnav
+    border-bottom: 1px solid rgba(#000000, 0.15)
+    padding: 20px
+    box-sizing: border-box
+.subnav
+    li
+        padding: 20px 0 0 0
+        a
+            font-size: 1em
+            opacity: 0.5
+#overlay
+    background-color: rgba(#000000, 0.5)
     height: 100vh
     width: 100vw
     position: fixed
-    padding: 0 2em
-    left: 100vw
-    z-index: 5
-    background-color: #ffffff
-    color: #000000
-    transition: 1s $easeOutExpo
+    z-index: 1
+    visibility: hidden
+    opacity: 0
+    cursor: pointer
 
-    nav
-        height: 100vh
-        padding-top: 20vh
-    li
-        a
-            box-sizing: border-box
-            display: block
-            color: #000000
-            font: 2.5em $bold
-            h4
-                margin: 0
-    &.menu_opened
-        left: 0
-        transition: 1s $easeOutExpo
+// btn menu
+
+.btn_lines
+    span
+        height: 3px
+        width: 40px
+        background: #000000
+        display: block
+        position: relative
+        top: 0px
+        &::after, &::before
+            content: ""
+            height: 3px
+            width: 40px
+            background: #000000
+            position: absolute
+        &::before
+            top: -7px
+        &::after
+            top: 7px
+            width: 20px
+
+ul.second_level
+    height: 100vh
+    position: absolute
+    top: 57px
+    left: 0
+    background: purple
+    width: 100%
+    color: #ffffff
+
+li.first_level
+    ul.second_level
+        display: none
+
+li.first_level:hover
+    ul.second_level
+        display: block
+
+button.firstnav_button, button.subnav_button, button.menu
+    outline: 0
+    background: transparent
+
+    border: none
+
+button.firstnav_button
+    float: right
+    border-radius: 50px
+    background: #999999
+    height: 20px
+    width: 20px
+button.subnav_button
+    float: right
+
+.line
+    fill: none
+    stroke: black
+    stroke-width: 6
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)
+
+    &1
+        stroke-dasharray: 60 207
+        stroke-width: 6
+
+    &2
+        stroke-dasharray: 60 60
+        stroke-width: 6
+
+    &3
+        stroke-dasharray: 60 207
+        stroke-width: 6
+
+    .opened &1
+        stroke-dasharray: 90 207
+        stroke-dashoffset: -134
+        stroke-width: 6
+
+    .opened &2
+        stroke-dasharray: 1 60
+        stroke-dashoffset: -30
+        stroke-width: 6
+
+    .opened &3
+        stroke-dasharray: 90 207
+        stroke-dashoffset: -134
+        stroke-width: 6
+
+li.search
+    input
+        border: none
+        padding: 0.75em 1em
+        border-radius: 30px
+        font: 1em $ligth
+        background: rgba(#000000, 0.1)
+        width: 100%
+        box-sizing: border-box
+
+.first_level_link
+    font: 1.25em $bold

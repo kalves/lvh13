@@ -3,6 +3,7 @@ import { Apollo } from "apollo-angular";
 import gql from "graphql-tag";
 import OPTIONS_QUERY from "../apollo/queries/options/options";
 import { Subscription } from "rxjs";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-options",
@@ -18,9 +19,10 @@ export class OptionsComponent implements OnInit {
   private queryOptions: Subscription;
   title = "Options";
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, public route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    console.log("verification : " + this.route.children);
     this.queryOptions = this.apollo
       .watchQuery({
         query: OPTIONS_QUERY,

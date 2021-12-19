@@ -1,0 +1,27 @@
+<div *ngIf="route.children.length === 0">
+<h1 class="big_title home_title">Général</h1>
+<hr class="hr_home">
+    <section class="section_sub">
+        <h2 class="sub_title"><a routerLink="specialites">Les spécialités</a></h2>
+        <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
+            designed for this is that if you can
+            write your query in GraphiQL</p>
+        <a routerLink="specialites">
+            <button class="button_design button_right background_options" data-text="Voir les spécialités">Voir les
+                spécialités</button>
+        </a>
+    </section>
+    <hr class="hr_home">
+    <section class="section_sub">
+        <h2 class="sub_title"><a routerLink="options">Les options</a></h2>
+        <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
+            designed for this is that if you can
+            write your query in GraphiQL</p>
+        <a routerLink="options">
+            <button class="button_design button_right background_options" data-text="Voir les optionsons">Voir les
+                options</button>
+        </a>
+    </section>
+    <hr class="hr_home">
+</div>
+    <router-outlet></router-outlet>

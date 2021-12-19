@@ -9,32 +9,28 @@ import { SingleOptionsComponent } from "./single-options/single-options.componen
 import { SingleSpecialitesComponent } from "./single-specialites/single-specialites.component";
 //import { SearchComponent } from './search/search.component';
 import { SearchResultsComponent } from "./search/search-results.component";
+import { LyceeComponent } from "./lycee/lycee/lycee.component";
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
-    data: { animation: 0 },
+    data: {
+      animation: 0,
+      breadcrumb: "",
+    },
   },
   {
-    path: "specialites",
-    component: SpecialitesComponent,
-    data: { animation: 1 },
+    path: "lycee",
+    data: { breadcrumb: "lycée", animation: 1 },
+    loadChildren: () =>
+      import("./lycee/lycee.module").then((mod) => mod.LyceeModule),
   },
   {
-    path: "specialites/:slug",
-    component: SingleSpecialitesComponent,
-    data: { animation: 2 },
-  },
-  {
-    path: "options",
-    component: OptionsComponent,
-    data: { animation: 3 },
-  },
-  {
-    path: "options/:slug",
-    component: SingleOptionsComponent,
-    data: { animation: 4 },
+    path: "post-bac",
+    data: { breadcrumb: "post bac", animation: 1 },
+    loadChildren: () =>
+      import("./post-bac/post-bac.module").then((mod) => mod.PostBacModule),
   },
   {
     path: "informations",
@@ -55,9 +51,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-    initialNavigation: "enabled",
-    relativeLinkResolution: 'legacy'
-}),
+      initialNavigation: "enabled",
+      relativeLinkResolution: "legacy",
+    }),
   ],
   exports: [RouterModule],
 })

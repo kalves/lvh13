@@ -1,38 +1,56 @@
 <main class="main_content section_container">
     <section class="" >
-            <h1 class="big_title">
-                Lycée<br>Victor Hugo<br>
+            <h1 class="big_title home_title">
+                Année<br><span>20</span>21/22<br>
                 
               </h1>
     </section>
     <section class="sections_container">
     <section class="section_sub">
-            <h2 class="sub_title"><a routerLink="specialites">Spécialités</a></h2>
+        
+            <h2 class="sub_title"><a routerLink="lycee/general">Lycée Général</a></h2>
             <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
             designed for this is that if you can
             write your query in GraphiQL</p>
-            <a routerLink="specialites">
+            <a routerLink="lycee/general/specialites">
                 <button class="button_design button_right background_specialites" data-text="Voir les spécialités">Voir les
                     spécialités</button>
             </a>
+            <br><br>
+            <a routerLink="lycee/general/options">
+                <button class="button_design button_right background_options" data-text="Voir les options">Voir les
+                    options</button>
+            </a>
+                <hr class="hr_home">
+
     </section>
-    
     <section class="section_sub">
-            <h2 class="sub_title"><a routerLink="options"> Options</a></h2>
+            <h2 class="sub_title"><a routerLink="lycee/technologique">Lycée Technologique</a></h2>
             <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
                 designed for this is that if you can
                 write your query in GraphiQL</p>
-            <a routerLink="options">
+            <a routerLink="lycee/technologique/specialites">
                 <button class="button_design button_right background_options" data-text="Voir les options">Voir les options</button>
             </a>
+                <hr class="hr_home">
+
+    </section>
+    <section class="section_sub">
+        <h2 class="sub_title"><a routerLink="post-bac"> Post Bac</a></h2>
+        <p>We believe that using GraphQL should be easy and fun. One of the ways Apollo is
+            designed for this is that if you can
+            write your query in GraphiQL</p>
+        <a routerLink="post-bac/bts">
+            <button class="button_design button_right background_bts" data-text="Voir les BTS">Voir les
+                BTS</button>
+        </a>
     </section>
     </section>
-    <section class="section">
+   <!--  <section class="section">
         <div class="">
             <br><br><br>
-            <mgl-map id="map" [style]="'mapbox://styles/ak85/ckmhk4g9o8v1w17qlbc14p7e1'" [zoom]="[12]" [center]="[5.368276585915851,43.294836712680706]">
-            </mgl-map>
-            
+             <mgl-map id="map" [style]="'mapbox://styles/ak85/ckmhk4g9o8v1w17qlbc14p7e1'" [zoom]="[12]" [center]="[5.368276585915851,43.294836712680706]">
+            </mgl-map> 
         </div>
-    </section>
+    </section> -->
 </main>

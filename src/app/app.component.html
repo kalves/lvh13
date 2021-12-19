@@ -3,12 +3,14 @@
  -->
 <!-- scene principale -->
 
-<div class="background home"></div>
+<!-- <div class="background home"></div>
 <div class="background specialites"></div>
 <div class="background options"></div>
-<div class="background infos"></div>
+<div class="background infos"></div> -->
+
 
 <main id="main">
+<app-breadcrumb></app-breadcrumb>
   <div [@routeAnimations]="prepareRoute(outlet)" class="main_content">
     <router-outlet #outlet="outlet"></router-outlet>
     </div>
@@ -16,3 +18,9 @@
 
  
 </main>
+
+<div id="scroll">
+  <div class="mousey">
+    <div class="scroller"></div>
+  </div>
+</div>

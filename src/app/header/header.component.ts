@@ -5,6 +5,7 @@ import { popOverState } from "../commons/animations/animations";
 import { Router } from "@angular/router";
 import { SearchService } from "../commons/services/search/search.service";
 import { NgForm } from "@angular/forms";
+import { gsap } from "gsap/all";
 
 @Component({
   selector: "app-header",
@@ -35,16 +36,43 @@ export class HeaderComponent implements OnInit {
   closeSidebar() {
     this.show = false;
     let menu = document.getElementById("sidebar");
+    let button = document.getElementById("button");
     menu.classList.remove("menu_opened");
+    button.classList.remove("opened");
+
+    gsap.to(document.getElementById("overlay"), {
+      duration: 0.8,
+      autoAlpha: 0,
+      ease: "expo.out",
+    });
+    gsap.to(document.getElementById("main"), {
+      duration: 0.8,
+      x: 0,
+      webkitFilter: "blur(0px)",
+      ease: "expo.out",
+    });
   }
 
   toggleSidebar() {
     let menu = document.getElementById("sidebar");
+    let button = document.getElementById("button");
     this.show = !this.show;
     if (this.stateNameSidebar === "show") {
       menu.classList.add("menu_opened");
+      button.classList.add("opened");
+      gsap.to(document.getElementById("overlay"), {
+        duration: 0.8,
+        autoAlpha: 1,
+        ease: "expo.out",
+      });
+      gsap.to(document.getElementById("main"), {
+        duration: 1.8,
+        x: "50%",
+        webkitFilter: "blur(8px)",
+        ease: "expo.out",
+      });
     } else {
-      menu.classList.remove("menu_opened");
+      this.closeSidebar();
     }
   }
 

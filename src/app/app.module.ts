@@ -22,6 +22,8 @@ import { SearchResultsComponent } from "./search/search-results.component";
 import { SearchService } from "./commons/services/search/search.service";
 import { NgxMapboxGLModule } from "ngx-mapbox-gl";
 import { MarkdownModule } from "ngx-markdown";
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { OptionsModule } from './options/options.module';
 
 @NgModule({
   declarations: [
@@ -38,18 +40,20 @@ import { MarkdownModule } from "ngx-markdown";
     SingleOptionsComponent,
     //SearchComponent,
     SearchResultsComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     MarkdownModule.forRoot(),
-    BrowserModule.withServerTransition({ appId: "serverApp" }),
-    NgxMapboxGLModule.withConfig({
+    BrowserModule.withServerTransition({ appId: "lvh13" }),
+    /*  NgxMapboxGLModule.withConfig({
       accessToken:
         "pk.eyJ1IjoiYWs4NSIsImEiOiJja2xmNG1rYWgxMmxiMnptZzZmanpveTFjIn0.HuikV59dGW1YMBsVsQKdwQ",
-    }),
+    }), */
     BrowserAnimationsModule,
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
+    OptionsModule,
   ],
   providers: [
     SearchService,

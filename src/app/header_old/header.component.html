@@ -1,0 +1,99 @@
+<!-- <app-menu></app-menu>
+ -->
+ <header class="header" id="header">
+        <ul>
+        <!--  <li class="home">
+                <a routerLink="/" class="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeSidebar()">
+                                <img src="../../assets/img/educ.png" alt="" height="50px" width="50px">
+    <h4>Lycée Victor Hugo</h4>
+                </a>
+            </li>
+            <li class="search" style="flex-grow: 2;">
+                <a>
+                    <h4>
+                        <form id="searchform" (keydown.enter)="onSubmit($event)">
+                            <input id="search_term" ng-model="searchBox" type="text" class="search_header search_input" placeholder="Recherche">
+                        </form> 
+                    </h4>
+                </a>
+            </li>
+            <li>
+                <a routerLink="specialites" class="specialites" routerLinkActive="active">
+                    <h4>Spécialités</h4>
+                </a>
+            </li>
+            <li>
+                <a routerLink="options" class="options" routerLinkActive="active">
+                    <h4>Options</h4>
+                </a>
+            </li>
+            <li>
+                <a routerLink="informations" class="informations" routerLinkActive="active">
+                    <h4></h4>
+                </a>
+            </li>-->
+            <li (click)="toggleSidebar()" style="display: none;">
+               <!--  <div id="btn_menu">
+                    <div class="bt-menu-trigger">
+                        <span></span>
+                    </div>
+                                    Menu
+
+                </div> -->
+                <svg class="ener__button__svg" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32"
+                    style="overflow:visible;enable-background:new 0 0 32 32;" xml:space="preserve">
+                    <circle class="ener__button__svg__transparent-bg__bg" cx="16" cy="16" r="16"></circle>
+                    <circle class="ener__button__svg__transparent-bg__border" cx="16" cy="16" r="15.33" fill="#ffffff"></circle>
+                    <circle class="ener__button__svg__white-bg" cx="16" cy="16" r="16"></circle>
+                    <polygon class="ener__button__svg__icon" points="14.67,10 13.25,11.4 17.91,16 13.25,20.6 14.67,22 20.75,16 " fill="#ffffff">
+                    </polygon>
+                </svg>
+            </li>
+             <li class="home" >
+                <a routerLink="/" class="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                    >
+<!--                     <img src="../../assets/img/educ.png" alt="" height="50px" width="50px">
+ -->                    <h4>Lycée Victor Hugo</h4>
+                </a>
+            </li> 
+            <li class="search">
+                <a>
+                    <h4>
+                        <form id="searchform" (keydown.enter)="onSubmit($event)">
+                            <input id="search_term" ng-model="searchBox" type="text" class="search_header search_input"
+                                placeholder="Recherche">
+                        </form>
+                    </h4>
+                </a>
+            </li>
+        </ul>
+</header> 
+
+<div id="overlay" (click)="closeSidebar()"></div>
+
+<aside id="sidebar" class="sidebar_wrapper" [@popOverState]="stateNameSidebar">
+    <nav>
+        <ul>
+            <li>
+                <!-- <form (keydown.enter)="onSubmit($event)">
+                    <input id="search_term" ng-model="searchBox" type="text" class="search_header" placeholder="Recherche">
+                </form> -->
+            </li>
+        <li>
+            <a routerLink="specialites" routerLinkActive="active" >
+                <h4>Spécialités</h4>
+            </a>
+        </li>
+        <li>
+            <a routerLink="options" routerLinkActive="active" class="hda">
+                <h4>Options</h4>
+            </a>
+        </li>
+        <li>
+            <a routerLink="informations" routerLinkActive="active" class="theatre" (click)="toggleSidebar()">
+                <h4>Infos pratiques</h4>
+            </a>
+        </li>
+        </ul>
+    </nav>
+</aside>
