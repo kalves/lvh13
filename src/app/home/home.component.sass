@@ -1,5 +1,8 @@
 @import '../../styling/settings'
 
+.home_header
+    padding-bottom: 7vh
+
 .home_title
     font-variant: normal
     margin: 0
@@ -22,3 +25,18 @@
 
 #map
     height: 100vh
+
+hr.hr_title
+    width: 75px
+    border: none
+    border-bottom: 8px solid #000000
+    opacity: 1
+    margin: 1em 0
+    border-color: #000000 !important
+
+span.map
+    &::before
+        content: "\e80e"
+        font: 1em $icons
+        padding-right: 7px
+        opacity: 0.5

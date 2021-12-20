@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: "",
     component: LyceeComponent,
-    data: { animation: 1, breadcrumb: "" },
+    data: { breadcrumb: "" },
     children: [
       {
         path: "general",

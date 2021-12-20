@@ -1,38 +1,38 @@
 <!-- <app-menu></app-menu>
  -->
- <header class="header" id="header">
-        <ul>
-        
-             <li class="home" >
-                <a routerLink="/" (click)="closeSidebar()" class="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                    >
-                  Lycée Victor Hugo<br><span class="span_title">Marseille</span>
-                </a>
-            </li> 
-            <li (click)="toggleSidebar()" class="btn_menu"  [@popOverState]="stateNameSidebar">
-                
-                <button class="menu" id="button"
-                    onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
-                    aria-label="Main Menu">
-                    <svg width="40" height="40" viewBox="0 0 100 100">
-                        <path class="line line1"
-                            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                        <path class="line line2" d="M 20,50 H 80" />
-                        <path class="line line3"
-                            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-                    </svg>
-                </button>
-            
-            </li>
-            <div class="navigation_buttons">
+<header class="header" id="header">
+    <ul>
+
+        <li class="home">
+            <a routerLink="/" (click)="closeSidebar()" class="home" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                LVH13
+            </a>
+        </li>
+        <li (click)="toggleSidebar()" class="btn_menu" [@popOverState]="stateNameSidebar">
+
+            <button class="menu" id="button"
+                onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+                aria-label="Main Menu">
+                <svg width="40" height="40" viewBox="0 0 100 100">
+                    <path class="line line1"
+                        d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="line line2" d="M 20,50 H 80" />
+                    <path class="line line3"
+                        d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                </svg>
+            </button>
+
+        </li>
+        <div class="navigation_buttons">
             <li class="search">
                 <a>
-                   
-                       <!--  <form id="searchform" (keydown.enter)="onSubmit($event)">
+
+                    <!--  <form id="searchform" (keydown.enter)="onSubmit($event)">
                             <input id="search_term" ng-model="searchBox" type="text" class="search_header search_input"
                                 placeholder="Recherche">
                         </form> -->
-                    
+
                 </a>
             </li>
             <li class="first_level">
@@ -56,7 +56,10 @@
                 <a routerLink="informations" class="informations" routerLinkActive="active">
                     Post BAC
                 </a>
-                <ul class="second_level"><li><h3>BTS</h3></li>
+                <ul class="second_level">
+                    <li>
+                        <h3>BTS</h3>
+                    </li>
                 </ul>
             </li>
             <li class="first_level">
@@ -64,9 +67,9 @@
                     Informations
                 </a>
             </li>
-            </div>
-        </ul>
-</header> 
+        </div>
+    </ul>
+</header>
 
 <div id="overlay" (click)="closeSidebar()"></div>
 
@@ -83,29 +86,35 @@
             </li>
         </ul>
         <ul class="firstnav">
-                <li><a class="first_level_link" routerLink="lycee/general" routerLinkActive="active" (click)="toggleSidebar()">Lycée général</a><button class="firstnav_button">-</button>
-                    <ul class="subnav">
-                        <li><a routerLink="lycee/general/specialites" routerLinkActive="active" (click)="toggleSidebar()">Spécialités</a><button class="subnav_button">➞</button></li>
-                        <li><a routerLink="lycee/general/options" routerLinkActive="active" (click)="toggleSidebar()">Options</a><button class="subnav_button">➞</button></li>
-                    </ul>
-                </li>
-        </ul>
-        <ul class="firstnav">
-                <li>
-                    <a class="first_level_link" routerLink="lycee/technologique" routerLinkActive="active" (click)="toggleSidebar()">Lycée technologique</a><button class="firstnav_button">+</button>
-                </li>
+            <li><a class="first_level_link" routerLink="lycee/general" routerLinkActive="active"
+                    (click)="toggleSidebar()">Lycée général</a><button class="firstnav_button">-</button>
+                <ul class="subnav">
+                    <li><a routerLink="lycee/general/specialites" routerLinkActive="active"
+                            (click)="toggleSidebar()">Spécialités</a><button class="subnav_button">➞</button></li>
+                    <li><a routerLink="lycee/general/options" routerLinkActive="active"
+                            (click)="toggleSidebar()">Options</a><button class="subnav_button">➞</button></li>
+                </ul>
+            </li>
         </ul>
         <ul class="firstnav">
             <li>
-                    <a class="first_level_link" routerLink="post-bac" routerLinkActive="active" (click)="toggleSidebar()">Post Bac</a><button class="firstnav_button">+</button>
-                </li>    
+                <a class="first_level_link" routerLink="lycee/technologique" routerLinkActive="active"
+                    (click)="toggleSidebar()">Lycée technologique</a><button class="firstnav_button">+</button>
+            </li>
         </ul>
-                <ul class="firstnav">
+        <ul class="firstnav">
+            <li>
+                <a class="first_level_link" routerLink="post-bac" routerLinkActive="active"
+                    (click)="toggleSidebar()">Post Bac</a><button class="firstnav_button">+</button>
+            </li>
+        </ul>
+        <ul class="firstnav">
 
-    <li>
-        <a class="first_level_link" routerLink="informations" routerLinkActive="active" (click)="toggleSidebar()">Informations</a>
-    </li>
-    </ul>
+            <li>
+                <a class="first_level_link" routerLink="informations" routerLinkActive="active"
+                    (click)="toggleSidebar()">Informations</a>
+            </li>
+        </ul>
 
     </nav>
 </aside>

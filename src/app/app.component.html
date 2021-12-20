@@ -10,13 +10,16 @@
 
 
 <main id="main">
-<app-breadcrumb></app-breadcrumb>
-  <div [@routeAnimations]="prepareRoute(outlet)" class="main_content">
+  <app-breadcrumb></app-breadcrumb>
+  <!-- <div [@routeAnimations]="prepareRoute(outlet)" class="main_content">
     <router-outlet #outlet="outlet"></router-outlet>
-    </div>
-      <app-footer></app-footer>
+  </div> -->
+  <div class="main_content">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <app-footer></app-footer>
 
- 
+
 </main>
 
 <div id="scroll">
